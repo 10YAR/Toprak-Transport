@@ -1,0 +1,7 @@
+{
+    "require": {
+        "telnyx/telnyx-php": "^2.7",
+        "ext-sqlite3": "*",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
