@@ -4,7 +4,7 @@ class SQL extends SQLite3
 {
     function __construct()
     {
-        $this->open('toprak.db');
+        $this->open('core/toprak.db');
     }
 }
 

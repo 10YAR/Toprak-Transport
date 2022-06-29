@@ -2,6 +2,8 @@
     "require": {
         "telnyx/telnyx-php": "^2.7",
         "ext-sqlite3": "*",
-        "vlucas/phpdotenv": "^5.4"
+        "vlucas/phpdotenv": "^5.4",
+        "sendinblue/api-v3-sdk": "8.x.x",
+      "ext-curl": "*"
     }
 }

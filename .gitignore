@@ -1,3 +1,6 @@
 vendor/*
-.env
+core/.env
 core/toprak.db
+idea/
+.idea/
+.vscode/

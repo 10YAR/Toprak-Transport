@@ -1,11 +1,5 @@
 <?php
-require_once "vendor/autoload.php";
 require_once "core/functions.php";
-date_default_timezone_set('Europe/Paris');
-setlocale(LC_ALL, 'fr_FR.utf8','fra');
-$FILE = $_SERVER['PHP_SELF'];
-$captcha_public_v3 = "6Le2UoMgAAAAAEHFw4AkWV1udCDQ5iowQg66Zt8d";
-$captcha_private_v3 = "6Le2UoMgAAAAAO3OQN9ccfYXjgIMPa5D3lXHTU2Y";
 ?>
 <!DOCTYPE html>
 <html lang="fr">

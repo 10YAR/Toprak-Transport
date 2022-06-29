@@ -68,12 +68,6 @@
                                 <li>
                                     <a href="/services.html">Nos Services</a>
                                 </li>
-                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="../faq.html">FAQ</a></li>
-                                        <li><a href="../payment-confirmation.html">Confirm Payment</a></li>
-                                    </ul>
-                                </li>
                                 <li>
                                     <a href="/aboutus.php">Qui sommes nous</a>
                                 </li>
