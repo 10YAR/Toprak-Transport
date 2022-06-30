@@ -31,8 +31,8 @@ $FILE = $_SERVER['PHP_SELF'];
 function saveBooking($trip_date, $trip_time, $pick_address, $drop_address, $pick_place_id, $drop_place_id, $retour, $nom, $tel, $email, $price, $distance, $duration) {
     global $db;
 
-    $stmt = $db->prepare("INSERT INTO bookings (trip_date, trip_time, pick_address, drop_address, pick_place_id, drop_place_id, price, retour, nom, tel, email) 
-    VALUES (:trip_date, :trip_time, :pick_address, :drop_address, :pick_place_id, :drop_place_id, :price, :retour, :nom, :tel, :email)");
+    $stmt = $db->prepare("INSERT INTO bookings (trip_date, trip_time, pick_address, drop_address, pick_place_id, drop_place_id, price, retour, nom, tel, email, status) 
+    VALUES (:trip_date, :trip_time, :pick_address, :drop_address, :pick_place_id, :drop_place_id, :price, :retour, :nom, :tel, :email, 'pending')");
 
     $stmt->bindValue(':trip_date', $trip_date);
     $stmt->bindValue(':trip_time', $trip_time);
@@ -165,22 +165,22 @@ function cancelBooking($bookingToken) {
 function acceptBooking($bookingToken) {
     global $db;
     $bookingToken = json_decode(base64_decode(urldecode($bookingToken)), JSON_THROW_ON_ERROR);
-    $stmt = $db->prepare("UPDATE bookings SET status = :status WHERE id = :id AND email = :email");
-    $stmt->bindValue(':status', "accepted");
-    $stmt->bindValue(':id', $bookingToken[0]);
-    $stmt->bindValue(':email', $bookingToken[1]);
-    if ($stmt->execute()) {
-        $sel = $db->prepare("SELECT * FROM bookings WHERE id = :id AND email = :email");
-        $sel->bindValue(':id', $bookingToken[0]);
-        $sel->bindValue(':email', $bookingToken[1]);
-        $datas = $sel->execute();
-        $datas = $datas->fetchArray(SQLITE3_ASSOC);
 
-        if ($datas['status'] == 'pending') {
-            sendConfirmationEmail($datas['email'], $datas['nom'], $datas['trip_date'], $datas['trip_time'], $datas['pick_address'], $datas['drop_address'], $datas['price'], $datas['retour'], $bookingToken);
-            $message = "*-CONFIRMATION-*\n\nLa réservation de *" . $datas['nom'] . " (" . $datas['tel'] . ")* a été acceptée\n";
-            sendTelegramMessage($message);
-        }
+    $sel = $db->prepare("SELECT * FROM bookings WHERE id = :id AND email = :email");
+    $sel->bindValue(':id', $bookingToken[0]);
+    $sel->bindValue(':email', $bookingToken[1]);
+    $datas = $sel->execute();
+    $datas = $datas->fetchArray(SQLITE3_ASSOC);
+
+    if ($datas['status'] == 'pending') {
+        $stmt = $db->prepare("UPDATE bookings SET status = :status WHERE id = :id AND email = :email");
+        $stmt->bindValue(':status', "accepted");
+        $stmt->bindValue(':id', $bookingToken[0]);
+        $stmt->bindValue(':email', $bookingToken[1]);
+        $stmt->execute();
+        sendConfirmationEmail($datas['email'], $datas['nom'], $datas['trip_date'], $datas['trip_time'], $datas['pick_address'], $datas['drop_address'], $datas['price'], $datas['retour'], $bookingToken);
+        $message = "*-CONFIRMATION-*\n\nLa réservation de *" . $datas['nom'] . " (" . $datas['tel'] . ")* a été acceptée\n";
+        sendTelegramMessage($message);
         return true;
     }
     return false;
@@ -235,6 +235,7 @@ function sendTelegramBooking($name, $tel, $trip_date, $trip_time, $pick_address,
     if ($retour === "true") $retourMessage = "(Trajet aller-retour)";
     else $retourMessage = "(Trajet aller simple)";
 
+    $duration = str_replace([" hour", " mins"], ["h", "min"], $duration);
     $telegram = initTelegram();
     if ($telegram) {
         $result = Request::sendMessage([
@@ -243,7 +244,7 @@ function sendTelegramBooking($name, $tel, $trip_date, $trip_time, $pick_address,
                 . "*$name ($tel)*\n"
                 . "*Date:* $trip_date à $trip_time\n\n"
                 . "*Départ:* $pick_address\n"
-                . "*Arrivée:* $drop_address\n"
+                . "*Arrivée:* $drop_address\n\n"
                 . "*Itinéraire:* [Google Maps](https://www.google.com/maps/dir/?api=1&origin=$pick_address&destination=$drop_address&destination_place_id=$drop_place_id&origin_place_id=$pick_place_id)\n"
                 . "*Distance:* $distance ($duration)\n\n"
                 . "*Tarif:* $price € $retourMessage\n\n"
