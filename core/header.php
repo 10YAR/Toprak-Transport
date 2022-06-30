@@ -14,9 +14,8 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
 
     <link rel="icon" href="../images/custom/favicon.ico" />
 
-    <link href="../css/bootstrap.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-
+    <link href="../css/bootstrap.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="../css/style.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/fontawesome-all.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/color.css" id="switcher" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/owl.carousel.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -26,6 +25,8 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
     <link href="../css/flatpickr.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <noscript>
+        <link href="../css/bootstrap.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
         <link href="../css/fontawesome-all.min.css" rel="stylesheet">
         <link href="../css/color.css" id="switcher" rel="stylesheet">
         <link href="../css/owl.carousel.css" rel="stylesheet">
@@ -35,7 +36,7 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
         <link rel="stylesheet" href="../css/flatpickr.min.css">
     </noscript>
 
-    <script src="../js/jquery-1.12.5.min.js"></script>
+    <script src="../js/jquery-1.12.5.min.js" defer></script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" defer></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" defer></script>
