@@ -37,14 +37,12 @@
 <script src="../js/flatpickr.js"></script>
 <script src="https://npmcdn.com/flatpickr@4.6.9/dist/l10n/fr.js"></script>
 <script src="../js/reservation.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyATVT5iGxw-iBySPs6OYGo3zh9DsDoDA8M&callback=initializeMap"></script>
-<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=<?= getenv('GOOGLE_CLOUD_API_KEY') ?>&callback=initializeMap"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=<?= getenv('CAPTCHA_PUBLIC_V3') ?>"></script>
 <script src="../js/custom.js"></script>
 <!-- Js Files End -->
 </body>
 
-
-<!-- Facebook Chat (prod only)
 <div id="fb-root"></div>
 <div id="fb-customer-chat" class="fb-customerchat"></div>
 <script type="text/javascript">
@@ -65,5 +63,5 @@
         js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-</script>-->
+</script>
 </html>
