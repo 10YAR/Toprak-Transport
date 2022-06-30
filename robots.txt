@@ -1,0 +1,19 @@
+# robots.txt for https://toprak-transport.fr
+
+User-agent: *
+Disallow: /*core/*
+Disallow: /*css/*
+Disallow: /*fonts/*
+Disallow: /*images/*
+Disallow: /*js/*
+Disallow: /*vendor/*
+Disallow: /*webfonts/*
+Disallow: /*404/*
+Disallow: /*policy/*
+Disallow: /*xhr.calculate_trip.php/*
+Disallow: /*reservation/*
+Disallow: /*faq/*
+Disallow: /*contact-confirmation/*
+Disallow: /*booking/*
+
+Sitemap: https://toprak-transport.fr/sitemap.xml

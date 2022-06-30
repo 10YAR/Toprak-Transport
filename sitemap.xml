@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://toprak-transport.fr/</loc>
+  <lastmod>2022-06-30T19:38:36+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://toprak-transport.fr/services.php</loc>
+  <lastmod>2022-06-30T19:38:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toprak-transport.fr/aboutus.php</loc>
+  <lastmod>2022-06-30T19:38:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toprak-transport.fr/contact.php</loc>
+  <lastmod>2022-06-30T19:38:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+</sitemapindex>
