@@ -1,6 +1,6 @@
 <?php
-date_default_timezone_set('Europe/Paris');
-setlocale(LC_ALL, 'fr_FR.utf8','fra');
+require_once "core/functions.php";
+
 if (!empty($_POST['depart']) && !empty($_POST['arrivee']) && !empty($_POST['pick_date']) && !empty($_POST['pick_time'])) {
 
     $depart = $_POST["depart"];
@@ -119,7 +119,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
 }
 
 function getDistance($addressFrom, $addressTo){
-    $apiKey = 'AIzaSyATVT5iGxw-iBySPs6OYGo3zh9DsDoDA8M';
+    $apiKey = getenv('GOOGLE_CLOUD_API_KEY');
     $api = file_get_contents("https://maps.googleapis.com/maps/api/directions/json?origin=place_id:".($addressFrom)."&destination=place_id:".($addressTo)."&region=fr&unit=metric&key=".$apiKey);
     return json_decode($api);
 }
