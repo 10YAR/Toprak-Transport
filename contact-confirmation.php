@@ -3,53 +3,46 @@
 <?php
 define('TO_EMAIL', 'contact@toprak-transport.fr');
 
-/**
- * Function for sending email message
- * @return string ( Return Email Sending Status )
- */
-function sendEmailMsg(){
+if(!empty($_POST['contact_form'])) {
 
-    if(!empty($_POST['contact_form'])){
+    $captcha_error = false;
+    $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+    $recaptcha_response = $_POST['recaptcha_response'];
+    $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $captcha_secret_v3 . '&response=' . $recaptcha_response);
+    $recaptcha = json_decode($recaptcha);
 
-        $captcha_error = false;
-        $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-        $recaptcha_response = $_POST['recaptcha_response'];
-        $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $captcha_secret_v3 . '&response=' . $recaptcha_response);
-        $recaptcha = json_decode($recaptcha);
+    if ($recaptcha->score > 0.7) {
 
-        if ($recaptcha->score > 0.7) {
+        $name = filter_var($_POST['nom'], FILTER_SANITIZE_STRING);
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 
-            $name = filter_var($_POST['nom'], FILTER_SANITIZE_STRING);
-            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-            $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+        if (!empty($name) && !empty($email) && !empty($message)) {
 
-            if (!empty($name) && !empty($email) && !empty($message)) {
+            $headers = 'From: ' . $email . "\r\n";
+            $headers .= 'Reply-To: ' . $email . "\r\n";
+            $headers .= 'Content-Type: text/plain; charset=UTF-8' . "\r\n";
 
-                $headers = 'From: ' . $email . "\r\n";
-                $headers .= 'Reply-To: ' . $email . "\r\n";
-                $headers .= 'Content-Type: text/plain; charset=UTF-8' . "\r\n";
+            /* Formatting Email Message */
+            $title = 'Toprak Transport : Nouveau message de ' . $name;
+            $message =
+                'Un client a envoyé un message sur le site :' . "\n\n"
+                . 'Nom: ' . $name . "\n"
+                . 'Email: ' . $email . "\n"
+                . 'Message:' . "\n"
+                . $message . "\n\n\n"
+                . 'Sender IP Address: ' . getUserIp() . "\n";
 
-                /* Formatting Email Message */
-                $title = 'Toprak Transport : Nouveau message de ' . $name;
-                $message =
-                    'Un client a envoyé un message sur le site :' . "\n\n"
-                    . 'Nom: ' . $name . "\n"
-                    . 'Email: ' . $email . "\n"
-                    . 'Message:' . "\n"
-                    . $message . "\n\n\n"
-                    . 'Sender IP Address: ' . getUserIp() . "\n";
-
-                // Send Mail
-                $result = mail(TO_EMAIL, $title, $message, $headers);
-                if ($result) {
-                    $status = 1;
-                } else {
-                    $status = 0;
-                }
+            // Send Mail
+            $result = mail(TO_EMAIL, $title, $message, $headers);
+            if ($result) {
+                $status = 1;
+            } else {
+                $status = 0;
             }
-        }else {
-            $captcha_error = true;
         }
+    }else {
+        $captcha_error = true;
     }
 }
 
@@ -78,8 +71,6 @@ function getUserIp() {
 
     return $ip;
 }
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') sendEmailMsg();
 ?>
 <section class="tj-payment" id="success-payment">
     <div class="container">
