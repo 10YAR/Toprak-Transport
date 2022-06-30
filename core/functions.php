@@ -1,4 +1,7 @@
 <?php
+
+use Longman\TelegramBot\Request;
+
 require_once "vendor/autoload.php";
 require_once "core/SQL.php";
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
@@ -7,9 +10,25 @@ date_default_timezone_set('Europe/Paris');
 setlocale(LC_ALL, 'fr_FR.utf8','fra');
 $captcha_public_v3 = getenv('CAPTCHA_PUBLIC_V3');
 $captcha_private_v3 = getenv('CAPTCHA_PRIVATE_V3');
+if (getenv("ENV") == "test") ini_set("display_errors", 1);
 $FILE = $_SERVER['PHP_SELF'];
 
-function saveBooking($trip_date, $trip_time, $pick_address, $drop_address, $pick_place_id, $drop_place_id, $retour, $nom, $tel, $email, $price) {
+/**
+ * @param $trip_date
+ * @param $trip_time
+ * @param $pick_address
+ * @param $drop_address
+ * @param $pick_place_id
+ * @param $drop_place_id
+ * @param $retour
+ * @param $nom
+ * @param $tel
+ * @param $email
+ * @param $price
+ * @return bool
+ * @throws JsonException
+ */
+function saveBooking($trip_date, $trip_time, $pick_address, $drop_address, $pick_place_id, $drop_place_id, $retour, $nom, $tel, $email, $price, $distance, $duration) {
     global $db;
 
     $stmt = $db->prepare("INSERT INTO bookings (trip_date, trip_time, pick_address, drop_address, pick_place_id, drop_place_id, price, retour, nom, tel, email) 
@@ -29,15 +48,27 @@ function saveBooking($trip_date, $trip_time, $pick_address, $drop_address, $pick
 
     if ($stmt->execute()) {
         $last_id = $db->querySingle('SELECT id FROM bookings ORDER BY id DESC LIMIT 1');
-        $cancel = urlencode(base64_encode(json_encode(array($last_id, $email), JSON_THROW_ON_ERROR)));
+        $bookingToken = urlencode(base64_encode(json_encode(array($last_id, $email), JSON_THROW_ON_ERROR)));
         createSendinblueContact($nom, $email, $tel);
-        sendConfirmationEmail($email, $nom, $trip_date, $trip_time, $pick_address, $drop_address, $price, $retour, $cancel);
+        sendTelegramBooking($nom, $tel, $trip_date, $trip_time, $pick_address, $drop_address, $pick_place_id, $drop_place_id, $price, $retour, $bookingToken, $distance, $duration);
         return true;
     }
     return false;
 }
 
-function sendConfirmationEmail($email, $nom, $trip_date, $trip_time, $pick_address, $drop_addresss, $price, $retour, $cancel) {
+/**
+ * @param $email
+ * @param $nom
+ * @param $trip_date
+ * @param $trip_time
+ * @param $pick_address
+ * @param $drop_addresss
+ * @param $price
+ * @param $retour
+ * @param $bookingToken
+ * @return bool
+ */
+function sendConfirmationEmail($email, $nom, $trip_date, $trip_time, $pick_address, $drop_addresss, $price, $retour, $bookingToken) {
     if ($retour) $retourMessage = "(Trajet aller-retour)";
     else $retourMessage = "(Trajet aller simple)";
 
@@ -57,7 +88,7 @@ function sendConfirmationEmail($email, $nom, $trip_date, $trip_time, $pick_addre
         'arrivee' => $drop_addresss,
         'tarif' => $price,
         'retour' => $retourMessage,
-        'cancel' => $cancel);
+        'cancel' => $bookingToken);
 
     try {
         $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
@@ -68,8 +99,14 @@ function sendConfirmationEmail($email, $nom, $trip_date, $trip_time, $pick_addre
     }
 }
 
+/**
+ * @param $name
+ * @param $email
+ * @param $tel
+ * @return bool
+ */
 function createSendinblueContact($name, $email, $tel) {
-    // Convert the attributes to a format that SendinBlue can understand
+    // Converts the attributes to a format that SendinBlue can understand
     $name = explode(" ", $name);
     $firstname = $name[0];
     $lastname = $name[1] ?? null;
@@ -96,27 +133,125 @@ function createSendinblueContact($name, $email, $tel) {
     }
 }
 
-function cancelBooking($cancel) {
+/**
+ * @param $cancel
+ * @return bool
+ */
+function cancelBooking($bookingToken) {
     global $db;
-    $cancel = json_decode(base64_decode(urldecode($cancel)), JSON_THROW_ON_ERROR);
+    $bookingToken = json_decode(base64_decode(urldecode($bookingToken)), JSON_THROW_ON_ERROR);
     $stmt = $db->prepare("UPDATE bookings SET status = :status WHERE id = :id AND email = :email");
     $stmt->bindValue(':status', "canceled");
-    $stmt->bindValue(':id', $cancel[0]);
-    $stmt->bindValue(':email', $cancel[1]);
+    $stmt->bindValue(':id', $bookingToken[0]);
+    $stmt->bindValue(':email', $bookingToken[1]);
     if ($stmt->execute()) {
+        $sel = $db->prepare("SELECT * FROM bookings WHERE id = :id AND email = :email");
+        $sel->bindValue(':id', $bookingToken[0]);
+        $sel->bindValue(':email', $bookingToken[1]);
+        $datas = $sel->execute();
+        $datas = $datas->fetchArray(SQLITE3_ASSOC);
+        if ($datas['status'] == 'pending') {
+            $message = "*-ANNULATION-*\n\nLa réservation de *" . $datas['nom'] . " (" . $datas['tel'] . ")* a été ANNULÉE\n";
+            sendTelegramMessage($message);
+        }
         return true;
     }
     return false;
 }
 
-function notifyWhatsapp($message) {
-    $url = "https://api.whatsapp.com/send?phone=+33603806219&text=".urlencode($message['message']);
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-    curl_exec($ch);
-    curl_close($ch);
+/**
+ * @param $accept
+ * @return bool
+ */
+function acceptBooking($bookingToken) {
+    global $db;
+    $bookingToken = json_decode(base64_decode(urldecode($bookingToken)), JSON_THROW_ON_ERROR);
+    $stmt = $db->prepare("UPDATE bookings SET status = :status WHERE id = :id AND email = :email");
+    $stmt->bindValue(':status', "accepted");
+    $stmt->bindValue(':id', $bookingToken[0]);
+    $stmt->bindValue(':email', $bookingToken[1]);
+    if ($stmt->execute()) {
+        $sel = $db->prepare("SELECT * FROM bookings WHERE id = :id AND email = :email");
+        $sel->bindValue(':id', $bookingToken[0]);
+        $sel->bindValue(':email', $bookingToken[1]);
+        $datas = $sel->execute();
+        $datas = $datas->fetchArray(SQLITE3_ASSOC);
+
+        if ($datas['status'] == 'pending') {
+            sendConfirmationEmail($datas['email'], $datas['nom'], $datas['trip_date'], $datas['trip_time'], $datas['pick_address'], $datas['drop_address'], $datas['price'], $datas['retour'], $bookingToken);
+            $message = "*-CONFIRMATION-*\n\nLa réservation de *" . $datas['nom'] . " (" . $datas['tel'] . ")* a été acceptée\n";
+            sendTelegramMessage($message);
+        }
+        return true;
+    }
+    return false;
+}
+
+/**
+ * @return false|\Longman\TelegramBot\Telegram
+ */
+function initTelegram() {
+    $bot_api_key  = getenv("TELEGRAM_BOT_API_KEY");
+    $bot_username = 'ToprakTransportBot';
+
+    try {
+        $telegram = new Longman\TelegramBot\Telegram($bot_api_key, $bot_username);
+        $telegram->handleGetUpdates();
+    } catch (Longman\TelegramBot\Exception\TelegramException $e) {
+        var_dump($e->getMessage());
+        mail(getenv("ADMIN_EMAIL"), "Erreur lors de l'initialisation Telegram", $e->getMessage());
+        return false;
+    }
+
+    return $telegram;
+}
+
+/**
+ * @param $message
+ * @return void
+ * @throws \Longman\TelegramBot\Exception\TelegramException
+ */
+function sendTelegramMessage($message) {
+    $telegram = initTelegram();
+    $result = Request::sendMessage([
+        'chat_id' => getenv("TELEGRAM_CHAT_ID"),
+        'text'    => $message,
+        'parse_mode' => "MARKDOWN"
+    ]);
+}
+
+/**
+ * @param $name
+ * @param $tel
+ * @param $trip_date
+ * @param $trip_time
+ * @param $pick_address
+ * @param $drop_address
+ * @param $price
+ * @param $retour
+ * @return void
+ * @throws \Longman\TelegramBot\Exception\TelegramException
+ */
+function sendTelegramBooking($name, $tel, $trip_date, $trip_time, $pick_address, $drop_address, $pick_place_id, $drop_place_id, $price, $retour, $bookingToken, $distance, $duration) {
+    if ($retour === "true") $retourMessage = "(Trajet aller-retour)";
+    else $retourMessage = "(Trajet aller simple)";
+
+    $telegram = initTelegram();
+    if ($telegram) {
+        $result = Request::sendMessage([
+            'chat_id' => getenv("TELEGRAM_CHAT_ID"),
+            'text'    => "*---Nouvelle course---*\n\n"
+                . "*$name ($tel)*\n"
+                . "*Date:* $trip_date à $trip_time\n\n"
+                . "*Départ:* $pick_address\n"
+                . "*Arrivée:* $drop_address\n"
+                . "*Itinéraire:* [Google Maps](https://www.google.com/maps/dir/?api=1&origin=$pick_address&destination=$drop_address&destination_place_id=$drop_place_id&origin_place_id=$pick_place_id)\n"
+                . "*Distance:* $distance ($duration)\n\n"
+                . "*Tarif:* $price € $retourMessage\n\n"
+                . "✔ [Accepter](https://toprak-transport.fr/booking.php?accept=$bookingToken) --- "
+                . "❌ [Refuser](https://toprak-transport.fr/booking.php?cancel=$bookingToken)\n\n",
+            'parse_mode' => "MARKDOWN",
+            'disable_web_page_preview' => true
+        ]);
+    }
 }

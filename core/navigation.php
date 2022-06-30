@@ -63,10 +63,10 @@
                         <div class="collapse navbar-collapse" id="tj-navbar-collapse">
                             <ul class="nav navbar-nav">
                                 <li>
-                                    <a href="/">Réserver un taxi</a>
+                                    <a href="/">Réserver un Taxi</a>
                                 </li>
                                 <li>
-                                    <a href="/services.html">Nos Services</a>
+                                    <a href="/services.php">Nos Services</a>
                                 </li>
                                 <li>
                                     <a href="/aboutus.php">Qui sommes nous</a>

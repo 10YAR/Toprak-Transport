@@ -69,7 +69,7 @@
 
                     $trip_date = frenchDate(date('l d F', strtotime(transDate($preserved_data['trip_date']))));
                     $trip_time = str_replace(":", "h", $preserved_data['trip_time']);
-                    if (saveBooking($trip_date, $trip_time, $preserved_data['trip_pick_address'], $preserved_data['trip_drop_address'], $preserved_data['trip_pick_place_id'], $preserved_data['trip_drop_place_id'], $preserved_data['retour'], $_POST['nom'], $_POST['telephone'], $_POST['email'], $calculated_price['price']))
+                    if (saveBooking($trip_date, $trip_time, $preserved_data['trip_pick_address'], $preserved_data['trip_drop_address'], $preserved_data['trip_pick_place_id'], $preserved_data['trip_drop_place_id'], $preserved_data['retour'], $_POST['nom'], $_POST['telephone'], $_POST['email'], $calculated_price['price'], $calculated_price['distance'], $calculated_price['text_duration']))
                     {
                     ?>
                         <div class="col-md-8 col-sm-8 col-xs-12">

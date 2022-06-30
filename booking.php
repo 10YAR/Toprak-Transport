@@ -4,7 +4,10 @@
 if (isset($_GET['cancel'])) {
     $cancel = $_GET['cancel'];
     if (!empty($cancel)) cancelBooking($cancel);
-}
+}elseif (isset($_GET['accept'])) {
+    $accept = $_GET['accept'];
+    if (!empty($accept)) acceptBooking($accept);
+}else header("Location: /");
 ?>
 <section class="tj-contact-section">
     <div class="container">
@@ -19,11 +22,19 @@ if (isset($_GET['cancel'])) {
                     </ul>
                 </div>
                 <div class="tab-content" style="text-align: center;">
-                    <i class="fas fa-check" style="color:#09c009;font-size: 4rem;"></i>
-                    <h3>C'est annulé.</h3>
-                    <p style="font-size: 16px;">
-                        Votre réservation a été annulée.
-                    </p>
+                    <?php if (!empty($accept)) { ?>
+                        <i class="fas fa-check" style="color:#09c009;font-size: 4rem;"></i>
+                        <h3>C'est accepté</h3>
+                        <p style="font-size: 16px;">
+                            La réservation a bien été acceptée. Le client a reçu un message de confirmation.
+                        </p>
+                    <?php } else { ?>
+                        <i class="fas fa-cross" style="color:red;font-size: 4rem;"></i>
+                        <h3>C'est annulé.</h3>
+                        <p style="font-size: 16px;">
+                            La réservation a bien été annulée.
+                        </p>
+                    <?php } ?>
                 </div>
             </div>
         </div>
