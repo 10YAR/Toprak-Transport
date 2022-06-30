@@ -16,18 +16,29 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
 
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css" rel="stylesheet">
-    <link href="../css/color.css" id="switcher" rel="stylesheet">
-    <link href="../css/owl.carousel.css" rel="stylesheet">
-    <link href="../css/animate.css" rel="stylesheet">
-    <link href="../css/responsive.css" rel="stylesheet">
-    <link href="../css/icomoon.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/flatpickr.min.css">
+
+    <link href="../css/fontawesome-all.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="../css/color.css" id="switcher" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="../css/owl.carousel.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="../css/animate.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="../css/responsive.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="../css/icomoon.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="../css/flatpickr.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <noscript>
+        <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+        <link href="../css/color.css" id="switcher" rel="stylesheet">
+        <link href="../css/owl.carousel.css" rel="stylesheet">
+        <link href="../css/animate.css" rel="stylesheet">
+        <link href="../css/responsive.css" rel="stylesheet">
+        <link href="../css/icomoon.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/flatpickr.min.css">
+    </noscript>
 
     <script src="../js/jquery-1.12.5.min.js"></script>
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" defer></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" defer></script>
     <![endif]-->
 
 </head>
