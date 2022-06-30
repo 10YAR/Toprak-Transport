@@ -1,5 +1,8 @@
 <?php
 require_once "core/functions.php";
+
+$titlePages = ["index.php" => "Toprak Transport : Taxi en Seine-et-Marne", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter"];
+$titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Transport : Taxi en Seine-et-Marne";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -7,7 +10,7 @@ require_once "core/functions.php";
     <meta charset="utf-8">
     <meta name="description" content="Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. La référence du taxi en seine-et-marne. Réservez immédiatement en ligne">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Toprak Transport : Taxi en Seine-et-Marne</title>
+    <title><?= $titlePage ?></title>
 
     <link rel="icon" href="../images/custom/favicon.ico" />
 

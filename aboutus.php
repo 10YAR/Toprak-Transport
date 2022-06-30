@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-7">
-					<div class="about-info bounceInLeft animated delay-2s">
+					<div class="about-info bounceInLeft animated">
 						<div class="tj-heading-style">
 							<h3>Qui sommes nous ?</h3>
 						</div>
