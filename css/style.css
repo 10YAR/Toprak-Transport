@@ -2138,7 +2138,7 @@ h1,h2,h3,h4,h5,h6{
 .tj-banner{
 	float:left;
 	width:100%;
-	background:url("../images/custom/photo_6.jpg") no-repeat;
+	background:url("../images/custom/photo_6.webp") no-repeat;
 	background-size:cover;
 	padding:255px 0;
 	position:relative;
@@ -2515,7 +2515,7 @@ h1,h2,h3,h4,h5,h6{
 	float:left;
 	width:100%;
 	padding:64px 0 34px;
-	background:url("../images/custom/city.jpg")no-repeat;
+	background:url("../images/custom/city.webp")no-repeat;
 	background-size:cover;
 	position:relative;
 }
@@ -4722,7 +4722,7 @@ h1,h2,h3,h4,h5,h6{
 .tj-cal-to-action{
 	width:100%;
 	float:left;
-	background:url("../images/custom/city.jpg") no-repeat center center;
+	background:url("../images/custom/city.webp") no-repeat center center;
 	padding:50px 0 20px;
 	position:relative;
 }

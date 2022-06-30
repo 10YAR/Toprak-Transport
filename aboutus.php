@@ -37,7 +37,7 @@
 				</div>
 				<div class="col-md-6 col-sm-5">
 					<div class="about-banner bounceInRight animated delay-2s text-center">
-						<img src="images/custom/photo_5.jpg" alt=""/>
+						<img src="images/custom/photo_5.webp" alt=""/>
 					</div>
 				</div>
 			</div>

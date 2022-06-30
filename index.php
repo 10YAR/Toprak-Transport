@@ -242,7 +242,7 @@
 								<div class="outer-circle">
 									<div class="inner-circle">
 										<div class="inner-circle2">
-											<img src="images/custom/photo_eiffel.jpg" alt="" style="width: 100%;"/>
+											<img src="images/custom/photo_eiffel.webp" alt="" style="width: 100%;"/>
 										</div>
 									</div>
 								</div>
