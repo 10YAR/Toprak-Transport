@@ -96,7 +96,7 @@
                                 </ul>
                             </div>
                             <div class="tab-content" style="text-align: center;">
-                                <i class="fas fa-cross" style="color:#c0092b;font-size: 4rem;"></i>
+                                <i class="fas fa-times" style="color:#c0092b;font-size: 4rem;"></i>
                                 <h3>Une erreur s'est produite</h3>
                                 <p style="font-size: 16px;">
                                     Votre réservation n'a pas pu être confirmée, veuillez <a href="/">réessayer</a>

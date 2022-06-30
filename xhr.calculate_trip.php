@@ -34,7 +34,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     }
 
     $distance_from_home = getDistance("ChIJA-x2ddZC70cR5s7vOh8QaPA", $depart);
-    $value_distance_from_home = $distance_from_home->routes[0]->legs[0]->distance->value;
+    $value_distance_from_home = $distance_from_home->routes[0]->legs[0]->distance->value ?? 1000000;
 
     // Cas où c'est trop loin
     if ($value_distance_from_home > 70000) {
