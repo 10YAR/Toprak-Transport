@@ -29,7 +29,7 @@ if (isset($_GET['cancel'])) {
                             La réservation a bien été acceptée. Le client a reçu un message de confirmation.
                         </p>
                     <?php } else { ?>
-                        <i class="fas fa-cross" style="color:red;font-size: 4rem;"></i>
+                        <i class="fas fa-times" style="color:#f50d0d;font-size: 4rem;"></i>
                         <h3>C'est annulé.</h3>
                         <p style="font-size: 16px;">
                             La réservation a bien été annulée.

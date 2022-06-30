@@ -140,23 +140,22 @@ function createSendinblueContact($name, $email, $tel) {
 function cancelBooking($bookingToken) {
     global $db;
     $bookingToken = json_decode(base64_decode(urldecode($bookingToken)), JSON_THROW_ON_ERROR);
-    $stmt = $db->prepare("UPDATE bookings SET status = :status WHERE id = :id AND email = :email");
-    $stmt->bindValue(':status', "canceled");
-    $stmt->bindValue(':id', $bookingToken[0]);
-    $stmt->bindValue(':email', $bookingToken[1]);
-    if ($stmt->execute()) {
-        $sel = $db->prepare("SELECT * FROM bookings WHERE id = :id AND email = :email");
-        $sel->bindValue(':id', $bookingToken[0]);
-        $sel->bindValue(':email', $bookingToken[1]);
-        $datas = $sel->execute();
-        $datas = $datas->fetchArray(SQLITE3_ASSOC);
-        if ($datas['status'] == 'pending') {
-            $message = "*-ANNULATION-*\n\nLa réservation de *" . $datas['nom'] . " (" . $datas['tel'] . ")* a été ANNULÉE\n";
-            sendTelegramMessage($message);
-        }
-        return true;
+    $sel = $db->prepare("SELECT * FROM bookings WHERE id = :id AND email = :email");
+    $sel->bindValue(':id', $bookingToken[0]);
+    $sel->bindValue(':email', $bookingToken[1]);
+    $datas = $sel->execute();
+    $datas = $datas->fetchArray(SQLITE3_ASSOC);
+
+    if ($datas['status'] == 'pending') {
+        $stmt = $db->prepare("UPDATE bookings SET status = :status WHERE id = :id AND email = :email");
+        $stmt->bindValue(':status', "canceled");
+        $stmt->bindValue(':id', $bookingToken[0]);
+        $stmt->bindValue(':email', $bookingToken[1]);
+        $stmt->execute();
+        $message = "*-ANNULATION-*\n\nLa réservation de *" . $datas['nom'] . " (" . $datas['tel'] . ")* a été ANNULÉE\n";
+        sendTelegramMessage($message);
     }
-    return false;
+    return true;
 }
 
 /**
