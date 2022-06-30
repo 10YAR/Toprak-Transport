@@ -82,7 +82,12 @@ function getUserIp() {
                         <h3>Message envoyé!</h3>
                         <p>Votre message a bien été envoyé, nous y répondrons par email sous 48 heures</p>
                         <a href="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Retour à l'accueil</a>
-                    <?php } else header("Location: /contact.php"); ?>
+                    <?php } else { ?>
+                        <span class="fas fa-exclamation-triangle"></span>
+                        <h3>Erreur!</h3>
+                        <p>Votre message n'a pas été envoyé, veuillez réessayer</p>
+                        <a href="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Retour à l'accueil</a>
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4">
