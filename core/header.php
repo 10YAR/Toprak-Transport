@@ -36,7 +36,7 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
         <link rel="stylesheet" href="../css/flatpickr.min.css">
     </noscript>
 
-    <script src="../js/jquery-1.12.5.min.js" defer></script>
+    <script src="../js/jquery-1.12.5.min.js"></script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" defer></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" defer></script>
