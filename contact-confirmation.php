@@ -1,7 +1,7 @@
 <?php require_once "core/header.php"; ?>
 <?php require_once "core/navigation.php"; ?>
 <?php
-define('TO_EMAIL', 'info@toprak-transport.fr');
+define('TO_EMAIL', 'contact@toprak-transport.fr');
 
 /**
  * Function for sending email message

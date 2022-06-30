@@ -21,11 +21,11 @@
             </div>
             <div class="col-md-3 col-xs-12 col-sm-4 no-display-mobile">
                 <div class="info_box">
-                    <a href="mailto:info@toprak-transport.fr" style="text-decoration:none;">
+                    <a href="mailto:contact@toprak-transport.fr" style="text-decoration:none;">
                     <i class="fa fa-envelope"></i>
                     <div class="info_text">
                         <span class="info_title">Nous contacter</span>
-                        <span><a href="mailto:info@toprak-transport.fr" style="text-decoration: none;">info@toprak-transport.fr</a></span>
+                        <span><a href="mailto:contact@toprak-transport.fr" style="text-decoration: none;">contact@toprak-transport.fr</a></span>
                     </div>
                     </a>
                 </div>
