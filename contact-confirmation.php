@@ -77,53 +77,12 @@ function getUserIp() {
         <div class="row">
             <div class="col-md-8 col-sm-8">
                 <div class="success-msg">
-                    <?php if ($captcha_error) { ?>
+                    <?php if (isset($captcha_error) && $captcha_error == false) { ?>
                         <span class="fas fa-check"></span>
                         <h3>Message envoyé!</h3>
                         <p>Votre message a bien été envoyé, nous y répondrons par email sous 48 heures</p>
                         <a href="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Retour à l'accueil</a>
-                    <?php }else { ?>
-                        <form method="POST" class="tj-contact-form" id="contact-form" action="contact-confirmation.php">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="inner-holder">
-                                        <label for="name">Nom</label>
-                                        <input placeholder="Nom et prénom" name="nom" type="text" id="name" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 no-pad">
-                                    <div class="inner-holder">
-                                        <label for="email">Email</label>
-                                        <input placeholder="E-mail" name="email" type="email" id="email" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12">
-                                    <div class="inner-holder">
-                                        <label for="message">Message</label>
-                                        <textarea name="message" placeholder="Votre message" id="message" required></textarea>
-                                        <input type="hidden" name="recaptcha_response" class="recaptchaResponse">
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12">
-                                    <div class="inner-holder">
-                                        <button class="btn-submit" id="frm_submit_btn" name="contact_form" type="submit">Envoyer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <script>
-                            $(document).ready(function () {
-                                grecaptcha.ready(function () {
-                                    grecaptcha.execute('<?= $captcha_public_v3 ?>', {action: 'contact'}).then(function (token) {
-                                        var recaptchaResponse = document.getElementsByClassName('recaptchaResponse');
-                                        for (var child of recaptchaResponse) {
-                                            child.value = token;
-                                        }
-                                    });
-                                });
-                            });
-                        </script>
-                    <?php } ?>
+                    <?php } else header("Location: /contact.php"); ?>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4">
