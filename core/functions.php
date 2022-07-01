@@ -248,7 +248,7 @@ function sendTelegramBooking($name, $tel, $trip_date, $trip_time, $pick_address,
                 . "*Itinéraire:* [Google Maps](https://www.google.com/maps/dir/?api=1&origin=$pick_address&destination=$drop_address&destination_place_id=$drop_place_id&origin_place_id=$pick_place_id)\n"
                 . "*Distance:* $distance ($duration)\n\n"
                 . "*Tarif:* $price € $retourMessage\n\n"
-                . "✔ [Accepter](https://toprak-transport.fr/booking.php?accept=$bookingToken) --- "
+                . "✔ [Accepter](https://toprak-transport.fr/booking.php?accept=$bookingToken) - "
                 . "❌ [Refuser](https://toprak-transport.fr/booking.php?cancel=$bookingToken)\n\n",
             'parse_mode' => "MARKDOWN",
             'disable_web_page_preview' => true
