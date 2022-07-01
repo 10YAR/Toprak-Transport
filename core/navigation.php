@@ -6,7 +6,9 @@
             <div class="col-md-3 col-xs-12 col-sm-4">
                 <!--Logo Start-->
                 <div class="tj-logo">
-                    <img src="../images/custom/logo.webp" alt="Logo Toprak Transport" style="height:91px;" />
+                    <a href="/">
+                        <img src="../images/custom/logo.webp" alt="Logo Toprak Transport" style="height:91px;" />
+                    </a>
                 </div>
                 <!--Logo End-->
             </div>

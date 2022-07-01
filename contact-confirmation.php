@@ -105,8 +105,8 @@ function getUserIp() {
                     <div class="add-info">
                         <span class="icon-mail-envelope-open icomoon"></span>
                         <p>
-                            <a href="mailto:info@toprak-transport.fr">
-                                info@toprak-transport.fr
+                            <a href="mailto:contact@toprak-transport.fr">
+                                contact@toprak-transport.fr
                             </a>
                         </p>
                     </div>

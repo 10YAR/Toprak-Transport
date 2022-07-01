@@ -63,7 +63,6 @@
                                                 <input type="hidden" name="trip_drop_place_id" id="trip_drop_place_id" />
 											</div>
 										</div>
-
                                         <div class="col-md-6 col-sm-6">
                                             <h4>Quand ?</h4>
                                             <div class="field-box booking-frm">
@@ -121,7 +120,7 @@
 								</div>
 								<div class="service-caption">
 									<h3>Réservation</h3>
-									<p>Réservez votre trajet en remplissant le formulaire de réservation</p>
+									<p>Réservez votre trajet sur le site</p>
 									<a href="#book">Réserver <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
 								</div>
 							</div>
@@ -224,7 +223,7 @@
 
 								<ul class="feature-list">
 									<li><i class="fa fa-check" aria-hidden="true"></i>Réservation rapide et facile</li>
-									<li><i class="fa fa-check" aria-hidden="true"></i>Tarif donné à la réservation, pas de surprises !</li>
+									<li><i class="fa fa-check" aria-hidden="true"></i>Tarif donné à l'avance, pas de surprises !</li>
 									<li><i class="fa fa-check" aria-hidden="true"></i>Chauffeurs expérimentés et professionnels</li>
 									<li><i class="fa fa-check" aria-hidden="true"></i>Véhicules en parfait état et contrôlés pour votre sécurité</li>
 								</ul>
