@@ -5192,6 +5192,9 @@ ul.cats li a {
 	.tj-banner {
 		background-position: 55% top;
 	}
+	.footer_leftText {
+		display: none;
+	}
 }
 
 .about-banner img {
@@ -5222,4 +5225,11 @@ ul.cats li a {
 	text-transform: none;
 }
 
+.footer_leftText {
+	float: right;
+	display: inline-block;
+	position: absolute;
+	top: -5px;
+	right: 0;
+}
 
