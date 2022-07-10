@@ -5192,9 +5192,6 @@ ul.cats li a {
 	.tj-banner {
 		background-position: 55% top;
 	}
-	.footer_leftText {
-		display: none;
-	}
 }
 
 .about-banner img {
@@ -5233,3 +5230,10 @@ ul.cats li a {
 	right: 0;
 }
 
+@media screen and (max-width: 768px) {
+	.footer_leftText {
+		display: block;
+		float: unset;
+		position: relative;
+	}
+}
