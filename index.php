@@ -280,7 +280,7 @@
 										<textarea name="message" id="send_msg" placeholder="Message" required></textarea>
                                         <input type="hidden" name="recaptcha_response" class="recaptchaResponse">
 									</div>
-									<button type="submit" id="sumbit_btn" name="contact_form" class="submit-btn">Envoyer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+									<button type="submit" id="sumbit_btn" name="contact_form" value="envoyer" class="submit-btn">Envoyer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
 								</form>
 							</div>
 						</div>

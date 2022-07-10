@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12">
                                     <div class="inner-holder">
-                                        <button class="btn-submit" id="frm_submit_btn" name="contact_form" type="submit">Envoyer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                                        <button class="btn-submit" id="frm_submit_btn" name="contact_form" value="envoyer" type="submit">Envoyer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
                                     </div>
                                 </div>
                             </div>

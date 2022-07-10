@@ -8,7 +8,7 @@ if(!empty($_POST['contact_form'])) {
     $captcha_error = false;
     $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
     $recaptcha_response = $_POST['recaptcha_response'];
-    $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $captcha_secret_v3 . '&response=' . $recaptcha_response);
+    $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $captcha_private_v3 . '&response=' . $recaptcha_response);
     $recaptcha = json_decode($recaptcha);
 
     if ($recaptcha->score > 0.7) {
