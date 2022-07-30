@@ -50,6 +50,9 @@
     var chatbox = document.getElementById('fb-customer-chat');
     chatbox.setAttribute("page_id", "115415361167825");
     chatbox.setAttribute("attribution", "biz_inbox");
+    chatbox.setAttribute("welcome_screen_greeting", "Discutez avec nous ici!");
+    chatbox.setAttribute("logged_out_greeting", "Discutez avec nous ici!");
+    chatbox.setAttribute("theme_color", "#dd3751");
 
     window.fbAsyncInit = function() {
         FB.init({

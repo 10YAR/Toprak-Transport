@@ -54,7 +54,12 @@
                     <!--Menu Holder Start-->
                     <nav class="navbar navbar-default">
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tj-navbar-collapse" aria-expanded="false">
+                            <ul class="nav navbar-nav" style="float:left;">
+                                <li>
+                                    <a href="/#book">Réserver un Taxi</a>
+                                </li>
+                            </ul>
+                            <button type="button" class="navbar-toggle collapsed" style="margin-top:12px;" data-toggle="collapse" data-target="#tj-navbar-collapse" aria-expanded="false">
                                 <span class="sr-only">Menu</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -64,9 +69,6 @@
                         <!-- Navigation Content Start -->
                         <div class="collapse navbar-collapse" id="tj-navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li>
-                                    <a href="/">Réserver un Taxi</a>
-                                </li>
                                 <li>
                                     <a href="/services.php">Nos Services</a>
                                 </li>
