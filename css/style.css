@@ -5237,3 +5237,7 @@ ul.cats li a {
 		position: relative;
 	}
 }
+
+.grecaptcha-badge {
+	visibility: hidden;
+}
