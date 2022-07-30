@@ -5162,6 +5162,12 @@ ul.cats li a {
 	font-size: 1.5rem;
 }
 
+#mark_duration {
+	display: none;
+	font-weight: 600;
+	font-size: 1.5rem;
+}
+
 .flatpickr-mobile {
 	width:100%;
 	border:1px solid lightgray;

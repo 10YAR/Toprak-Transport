@@ -104,7 +104,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         if ($price < 50)
             $price += $tranches[$tranche];
         else
-            $price += ($price / 100) * 20;
+            $price += ($price / 10) * 2.6;
     }
 
     // Si c'est un trajet aller retour...
@@ -115,7 +115,13 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         $text_distance = ($dist_only*2)+3 . " km";
     }
 
-    return (["price" => round($price), "distance" => $text_distance, "duration" => $duration, "text_duration" => $duration_text]);
+    if ($value_distance_from_home > 80000) {
+        $price += (($price / 3) * 3.0);
+    }elseif ($value_distance_from_home > 110000) {
+        $price += (($price / 3) * 7.0);
+    }
+
+    return (["price" => ceil(round($price)/10) * 10, "distance" => $text_distance, "duration" => $duration, "text_duration" => $duration_text]);
 }
 
 function getDistance($addressFrom, $addressTo){

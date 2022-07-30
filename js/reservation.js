@@ -61,7 +61,7 @@ $(document).ready(function () {
 });
 
 function checkPrice() {
-    $("#mark_tarif, #mark_distance").hide();
+    $("#mark_tarif, #mark_distance, #mark_duration").hide();
     $("#trip_continue_button").attr("disabled","disabled");
     $("#trip_pick_place_id").val("");
     $("#trip_drop_place_id").val("");
@@ -94,7 +94,8 @@ function checkPrice() {
                 if (data.distance && data.price && !data.error) {
                     $("#mark_distance").html("Distance: " + data.distance + " " + text_aller);
                     $("#mark_tarif").html("Tarif: " + data.price + " €");
-                    $("#mark_tarif, #mark_distance").show();
+                    $("#mark_duration").html("Durée trajet: " + data.text_duration);
+                    $("#mark_tarif, #mark_distance, #mark_duration").show();
                     $("#trip_continue_button").removeAttr("disabled");
 
                     $("#trip_pick_place_id").val(place_depart.place_id);

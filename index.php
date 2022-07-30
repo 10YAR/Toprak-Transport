@@ -84,6 +84,8 @@
                                             <span id="mark_tarif"></span>
                                             <br />
                                             <span id="mark_distance"></span>
+                                            <br />
+                                            <span id="mark_duration"></span>
 										</div>
 										<div class="col-md-3 col-sm-3">
 											<button type="submit" class="search-btn hover-button" id="trip_continue_button" disabled="disabled">Continuer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
