@@ -2191,14 +2191,14 @@ a:focus {
     padding: 20px 0;
 	text-align:center;
 	width:180px;
-	border:none;
+	border: 2px solid #eee;
 	border-radius:0;
-	background-color:#fff;
+	background-color:#eee;
 }
 .tj-form2-tabs .nav-tabs > li.active > a,
 .tj-form2-tabs .nav-tabs > li.active > a:hover,
 .tj-form2-tabs .nav-tabs > li.active > a:focus{
-	border:none;
+	border: 2px solid #eee;
 	color:#fff;
 }
 .tj-banner-form2 .tab-content{
