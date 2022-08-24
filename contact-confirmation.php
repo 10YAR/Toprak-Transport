@@ -15,6 +15,7 @@ if(!empty($_POST['contact_form'])) {
 
         $name = filter_var($_POST['nom'], FILTER_SANITIZE_STRING);
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $phone = filter_var($_POST['phone'], FILTER_SANITIZE_EMAIL);
         $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 
         if (!empty($name) && !empty($email) && !empty($message)) {
@@ -28,10 +29,11 @@ if(!empty($_POST['contact_form'])) {
             $message =
                 'Un client a envoyé un message sur le site :' . "\n\n"
                 . 'Nom: ' . $name . "\n"
-                . 'Email: ' . $email . "\n"
+                . 'Email: ' . $email . "\n\n"
+                . 'Téléphone: ' . $phone . "\n\n"
                 . 'Message:' . "\n"
                 . $message . "\n\n\n"
-                . 'Sender IP Address: ' . getUserIp() . "\n";
+                . '' . getUserIp() . "\n";
 
             // Send Mail
             $result = mail(TO_EMAIL, $title, $message, $headers);

@@ -25,6 +25,12 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12">
                                     <div class="inner-holder">
+                                        <label for="phone">Téléphone portable</label>
+                                        <input placeholder="06..." name="phone" type="tel" id="phone" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="inner-holder">
                                         <label for="message">Message</label>
                                         <textarea name="message" placeholder="Votre message" id="message" required></textarea>
                                         <input type="hidden" name="recaptcha_response" class="recaptchaResponse">

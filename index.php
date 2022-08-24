@@ -278,11 +278,14 @@
 											<input type="email" name="email" id="user_email" placeholder="Email" required/>
 										</div>
 									</div>
+                                    <div class="frm-field">
+                                            <input type="tel" name="phone" id="phone" placeholder="Téléphone portable" required/>
+                                    </div>
 									<div class="frm-field">
 										<textarea name="message" id="send_msg" placeholder="Message" required></textarea>
                                         <input type="hidden" name="recaptcha_response" class="recaptchaResponse">
 									</div>
-									<button type="submit" id="sumbit_btn" name="contact_form" value="envoyer" class="submit-btn">Envoyer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+									<button type="submit" id="sumbit_btn" name="contact_form" value="envoyer" class="submit-btn" style="margin-top:0;">Envoyer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
 								</form>
 							</div>
 						</div>

@@ -2330,7 +2330,7 @@ a:focus {
 	float: left;
 	width: 100%;
 	background-color:#fff;
-	padding:48px 35px;
+	padding: 30.5px 35px;
 	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); 
 	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); 
 	-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); 
@@ -2370,9 +2370,21 @@ a:focus {
 .contact_frm .field-inner #user_email-error{
 	margin-left:11px;
 }
-.contact_frm .frm-field input[type="text"]{
+.contact_frm .frm-field input[type="text"] {
 	display:inline-block;
 	width:245px;
+	height:45px;
+	padding:0 16px;
+	border-radius:5px;
+	border:1px solid #e8e8e8;
+	font-size:14px;
+	line-height:24px;
+	color:#444444;
+	margin-right:5px;
+}
+.contact_frm .frm-field input[type="tel"] {
+	display:inline-block;
+	width:100%;
 	height:45px;
 	padding:0 16px;
 	border-radius:5px;
@@ -4636,7 +4648,9 @@ a:focus {
 	padding:0 35px;
 }
 .tj-contact-form .inner-holder input[type="text"],
-.tj-contact-form .inner-holder input[type="email"]{
+.tj-contact-form .inner-holder input[type="email"],
+.tj-contact-form .inner-holder input[type="tel"]
+{
 	width:100%;
 	height:45px;
 	border:1px solid #e8e8e8;
