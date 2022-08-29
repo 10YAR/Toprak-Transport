@@ -1,7 +1,7 @@
 <?php require_once "core/header.php"; ?>
 <?php require_once "core/navigation.php"; ?>
 <?php
-define('TO_EMAIL', 'contact@toprak-transport.fr');
+define('TO_EMAIL', 'contact@toprak-transport.fr, bulentbayrakli75@gmail.com');
 
 if(!empty($_POST['contact_form'])) {
 
@@ -26,14 +26,7 @@ if(!empty($_POST['contact_form'])) {
 
             /* Formatting Email Message */
             $title = 'Toprak Transport : Nouveau message de ' . $name;
-            $message =
-                'Un client a envoyé un message sur le site :' . "\n\n"
-                . 'Nom: ' . $name . "\n"
-                . 'Email: ' . $email . "\n"
-                . 'Téléphone: ' . $phone . "\n\n"
-                . 'Message:' . "\n\n"
-                . $message . "\n\n\n"
-                . '' . getUserIp() . "\n";
+            $message .= "\n\n\n" . 'Téléphone: ' . $phone . "\n\n";
 
             // Send Mail
             $result = mail(TO_EMAIL, $title, $message, $headers);
