@@ -41,7 +41,15 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" defer></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" defer></script>
     <![endif]-->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZG55EC08ET"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
+        gtag('config', 'G-ZG55EC08ET');
+    </script>
 </head>
 <body>
 <div class="tj-wrapper">
