@@ -118,7 +118,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     if ($value_distance_from_home > 40000) {
         $price += (($price / 3) * 3.0);
     }elseif ($value_distance_from_home > 45000) {
-        $price += (($price / 3) * 7.0);
+        $price += (($price / 3) * 6.0);
     }
 
     return (["price" => ceil(round($price)/10) * 10, "distance" => $text_distance, "duration" => $duration, "text_duration" => $duration_text]);
