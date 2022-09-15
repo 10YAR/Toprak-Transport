@@ -37,7 +37,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     $value_distance_from_home = $distance_from_home->routes[0]->legs[0]->distance->value ?? 1000000;
 
     // Cas où c'est trop loin
-    if ($value_distance_from_home > 100000) {
+    if ($value_distance_from_home > 50000) {
         return (["error" => 3, "message" => "Nous sommes désolés, nous ne proposons pas nos services de taxi dans votre secteur"]);
     }
 
@@ -115,9 +115,9 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         $text_distance = ($dist_only*2)+3 . " km";
     }
 
-    if ($value_distance_from_home > 80000) {
+    if ($value_distance_from_home > 40000) {
         $price += (($price / 3) * 3.0);
-    }elseif ($value_distance_from_home > 110000) {
+    }elseif ($value_distance_from_home > 45000) {
         $price += (($price / 3) * 7.0);
     }
 
