@@ -57,28 +57,28 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         $price = 30;
         $tranche = "A";
     }elseif ($value_distance > 15000 AND $value_distance < 20000) {
-        $price = 39;
+        $price = 34;
         $tranche = "B";
     }elseif ($value_distance > 20000 AND $value_distance < 30000) {
-        $price = 49;
+        $price = 39;
         $tranche = "B";
     }elseif ($value_distance > 30000 AND $value_distance < 40000) {
-        $price = 69;
+        $price = 59;
         $tranche = "B";
     }elseif ($value_distance > 40000 AND $value_distance < 50000) {
-        $price = 79;
+        $price = 69;
         $tranche = "C";
     }elseif ($value_distance > 50000 AND $value_distance < 60000) {
-        $price = 89;
+        $price = 79;
         $tranche = "C";
     }elseif ($value_distance > 60000 AND $value_distance < 70000) {
-        $price = 109;
+        $price = 99;
         $tranche = "C";
     }elseif ($value_distance > 70000 AND $value_distance < 80000) {
-        $price = 139;
+        $price = 129;
         $tranche = "D";
     }elseif ($value_distance > 80000 AND $value_distance < 90000) {
-        $price = 149;
+        $price = 139;
         $tranche = "D";
     }else {
         $price = ceil((($value_distance / 10000) * 16) / 10) * 10;
@@ -86,7 +86,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     }
 
     // Définition des tranches de prix supplémentaires
-    $tranches = array("A" => 20, "B" => 30, "C" => 40, "D" => 50);
+    $tranches = array("A" => 15, "B" => 20, "C" => 30, "D" => 40);
 
     // Si réservation de nuit... prix plus cher!
     if ($pick_hour > 20 OR $pick_hour < 8)
