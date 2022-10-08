@@ -292,7 +292,7 @@
 					</div>
 				</div>
 			</section>
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
             grecaptcha.ready(function () {
                 grecaptcha.execute('<?= $captcha_public_v3 ?>', {action: 'contact'}).then(function (token) {

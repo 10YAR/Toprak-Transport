@@ -146,13 +146,13 @@ function cancelBooking($bookingToken) {
     $datas = $sel->execute();
     $datas = $datas->fetchArray(SQLITE3_ASSOC);
 
-    if ($datas['status'] == 'pending') {
+    if ($datas['status'] != 'canceled') {
         $stmt = $db->prepare("UPDATE bookings SET status = :status WHERE id = :id AND email = :email");
         $stmt->bindValue(':status', "canceled");
         $stmt->bindValue(':id', $bookingToken[0]);
         $stmt->bindValue(':email', $bookingToken[1]);
         $stmt->execute();
-        $message = "*-ANNULATION-*\n\nLa réservation de *" . $datas['nom'] . " (" . $datas['tel'] . ")* a été ANNULÉE\n";
+        $message = "*-ANNULATION-*\n\nLa réservation de *" . $datas['nom'] . " " . $datas['prenom'] . " (" . $datas['tel'] . ")* a été ANNULÉE par le client\n";
         sendTelegramMessage($message);
     }
     return true;
@@ -178,7 +178,7 @@ function acceptBooking($bookingToken) {
         $stmt->bindValue(':id', $bookingToken[0]);
         $stmt->bindValue(':email', $bookingToken[1]);
         $stmt->execute();
-        sendConfirmationEmail($datas['email'], $datas['nom'], $datas['trip_date'], $datas['trip_time'], $datas['pick_address'], $datas['drop_address'], $datas['price'], $datas['retour'], $bookingToken);
+        sendConfirmationEmail($datas['email'], $datas['nom'], $datas['trip_date'], $datas['trip_time'], $datas['pick_address'], $datas['drop_address'], $datas['price'], $datas['retour'], $bookingToken[0]);
         $message = "*-CONFIRMATION-*\n\nLa réservation de *" . $datas['nom'] . " (" . $datas['tel'] . ")* a été acceptée\n";
         sendTelegramMessage($message);
         return true;
@@ -197,7 +197,7 @@ function initTelegram() {
         $telegram = new Longman\TelegramBot\Telegram($bot_api_key, $bot_username);
         $telegram->handleGetUpdates();
     } catch (Longman\TelegramBot\Exception\TelegramException $e) {
-        var_dump($e->getMessage());
+        //var_dump($e->getMessage());
         mail(getenv("ADMIN_EMAIL"), "Erreur lors de l'initialisation Telegram", $e->getMessage());
         return false;
     }
@@ -232,7 +232,7 @@ function sendTelegramMessage($message) {
  * @throws \Longman\TelegramBot\Exception\TelegramException
  */
 function sendTelegramBooking($name, $tel, $trip_date, $trip_time, $pick_address, $drop_address, $pick_place_id, $drop_place_id, $price, $retour, $bookingToken, $distance, $duration) {
-    if ($retour === "true") $retourMessage = "(Trajet aller-retour)";
+    if ($retour === "true") $retourMessage = "(Trajet *aller-retour*)";
     else $retourMessage = "(Trajet aller simple)";
 
     $duration = str_replace([" hour", " mins"], ["h", "min"], $duration);
@@ -248,8 +248,7 @@ function sendTelegramBooking($name, $tel, $trip_date, $trip_time, $pick_address,
                 . "*Itinéraire:* [Google Maps](https://www.google.com/maps/dir/?api=1&origin=$pick_address&destination=$drop_address&destination_place_id=$drop_place_id&origin_place_id=$pick_place_id)\n"
                 . "*Distance:* $distance ($duration)\n\n"
                 . "*Tarif:* $price € $retourMessage\n\n"
-                . "✔ [Accepter](https://toprak-transport.fr/booking.php?accept=$bookingToken) - "
-                . "❌ [Refuser](https://toprak-transport.fr/booking.php?cancel=$bookingToken)\n\n",
+                . "✔ [Accepter](https://toprak-transport.fr/booking.php?accept=$bookingToken) \n\n",
             'parse_mode' => "MARKDOWN",
             'disable_web_page_preview' => true
         ]);

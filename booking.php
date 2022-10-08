@@ -26,13 +26,13 @@ if (isset($_GET['cancel'])) {
                         <i class="fas fa-check" style="color:#09c009;font-size: 4rem;"></i>
                         <h3>C'est accepté</h3>
                         <p style="font-size: 16px;">
-                            La réservation a bien été acceptée. Le client a reçu un message de confirmation.
+                            La réservation a bien été acceptée. Le client a reçu un email de confirmation.
                         </p>
                     <?php } else { ?>
-                        <i class="fas fa-times" style="color:#f50d0d;font-size: 4rem;"></i>
+                        <i class="fas fa-check" style="color:#09c009;font-size: 4rem;"></i>
                         <h3>C'est annulé.</h3>
                         <p style="font-size: 16px;">
-                            La réservation a bien été annulée.
+                            La réservation a bien été annulée et nos équipes ont été notifiés de l'annulation.
                         </p>
                     <?php } ?>
                 </div>
