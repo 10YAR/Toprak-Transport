@@ -251,6 +251,17 @@
 						</div>
 						<!--App Banner Section End-->
 					</div>
+                    <div class="row">
+                        <p>
+                            Réserver un chauffeur de taxi à Fontainebleau, c'est facile ! En effet, grâce au <a href="#book">module de réservation</a> de notre page dédiée, vous n'êtes plus qu'à quelques clics. Dans un premier temps, grâce à cet outil, vous pouvez obtenir les frais de déplacement vers et depuis tous les secteurs de la Seine-et-Marne. Cela vous donne une vue en temps réel du prix approximatif à payer, rendant votre voyage plus serein.
+                        </p>
+                        <p>
+                            Notre équipe d'excellents chauffeurs expérimentés dans la conduite de passagers est à votre service, y compris les prestations annexes, pour vous assurer en toute sécurité et monotonie tous vos trajets d'un point à un autre, qu'il s'agisse d'une gare ou d'un aéroport.
+                        </p>
+                        <p>
+                            Le chauffeur promet de vous ramener à temps à votre destination. Votre sécurité est leur priorité numéro un, et si les choses ne semblent pas se dérouler comme prévu en cours de route, les chauffeurs sont toujours à la recherche de solutions appropriées.
+                        </p>
+                    </div>
 				</div>
 			</section>
 			<!--App Section End-->
