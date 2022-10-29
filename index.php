@@ -251,9 +251,9 @@
 						</div>
 						<!--App Banner Section End-->
 					</div>
-                    <div class="row">
+                    <div class="row" style="font-size: 1.6rem;margin-top: 30px;">
                         <p>
-                            Réserver un chauffeur de taxi à Fontainebleau, c'est facile ! En effet, grâce au <a href="#book">module de réservation</a> de notre page dédiée, vous n'êtes plus qu'à quelques clics. Dans un premier temps, grâce à cet outil, vous pouvez obtenir les frais de déplacement vers et depuis tous les secteurs de la Seine-et-Marne. Cela vous donne une vue en temps réel du prix approximatif à payer, rendant votre voyage plus serein.
+                            Réserver un chauffeur de taxi en Seine-et-Marne c'est facile ! (Montereau, Fontainebleau, et plein d'autres villes) <br />En effet, grâce au <a href="#book">module de réservation</a> de notre page dédiée, vous n'êtes plus qu'à quelques clics. Dans un premier temps, grâce à cet outil, vous pouvez obtenir les frais de déplacement vers et depuis tous les secteurs de la Seine-et-Marne. Cela vous donne une vue en temps réel du prix à payer, rendant votre voyage plus serein.
                         </p>
                         <p>
                             Notre équipe d'excellents chauffeurs expérimentés dans la conduite de passagers est à votre service, y compris les prestations annexes, pour vous assurer en toute sécurité et monotonie tous vos trajets d'un point à un autre, qu'il s'agisse d'une gare ou d'un aéroport.
