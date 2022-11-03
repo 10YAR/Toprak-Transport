@@ -252,8 +252,9 @@
 						<!--App Banner Section End-->
 					</div>
                     <div class="row" style="padding: 0 1.5rem 0 1.5rem;font-size: 1.6rem;margin-top: 30px;">
+                        <h4 style="color:#dd3751;">Réserver un chauffeur de taxi en Seine-et-Marne c'est facile !</h4>
                         <p>
-                            Réserver un chauffeur de taxi en Seine-et-Marne c'est facile ! <br />En effet, grâce au <a href="#book">module de réservation</a> de notre page dédiée, vous n'êtes plus qu'à quelques clics. Dans un premier temps, grâce à cet outil, vous pouvez obtenir les frais de déplacement vers et depuis tous les secteurs de la Seine-et-Marne. Cela vous donne une vue en temps réel du prix à payer, rendant votre voyage plus serein.
+                            En effet, grâce au <a href="#book">module de réservation</a> de notre page dédiée, vous n'êtes plus qu'à quelques clics. Dans un premier temps, grâce à cet outil, vous pouvez obtenir les frais de déplacement vers et depuis tous les secteurs de la Seine-et-Marne. Cela vous donne une vue en temps réel du prix à payer, rendant votre voyage plus serein.
                         </p>
                         <p>
                             Notre équipe d'excellents chauffeurs expérimentés dans la conduite de passagers est à votre service, y compris les prestations annexes, pour vous assurer en toute sécurité et monotonie tous vos trajets d'un point à un autre, qu'il s'agisse d'une gare ou d'un aéroport.
@@ -262,22 +263,31 @@
                             Le chauffeur promet de vous ramener à temps à votre destination. Votre sécurité est leur priorité numéro un, et si les choses ne semblent pas se dérouler comme prévu en cours de route, les chauffeurs sont toujours à la recherche de solutions appropriées.
                         </p>
 
-                        <h4 style="color:#dd3751;">Toprak Transport : Votre taxi dans le département de la Seine-et-Marne (77)</h4>
+                        <h4 style="color:#dd3751;margin-top:5px;">Toprak Transport : Votre taxi dans le département de la Seine-et-Marne (77)</h4>
                         <p>
-                        Vous cherchez un taxi en Seine-et-Marne ?
-                        Nous sommes votre interlocuteur privilégié pour tous vos besoins en taxi dans le département de la Seine-et-Marne. Toprak Transport est votre meilleur choix ! Nous assurons le transport 7 jours sur 7 dans les communes de Fontainebleau (77920), Melun (77000), Montereau-Fault-Yonne (77130), Barbizon (77630), Avon (77210), Nemours (77140), Dammarie-les-lys (77190), Le Mée-sur-Seine (77285), Lieusaint (77127), Bois-le-Roi (77590), Cannes-Ecluse (77130), Donnemarie-Dontilly (77520), Coulommiers (77120), Bagneaux-sur-Loing (77016), Bailly-Romainvilliers (77018), Barbey (77021) ou ailleurs dans le département.
-                        Voyager peut être stressant, laissez-nous nous occuper du transport pour vous afin que vous puissiez vous concentrer sur votre temps libre. Que ce soit pour les affaires ou les loisirs, nous vous emmènerons là où vous devez aller.
-                        Nos chauffeurs professionnels et courtois seront heureux de vous aider à porter vos bagages et de vous donner des conseils sur la Seine-et-Marne. Réservez un taxi avec Toprak Transport aujourd'hui !
+                            Vous cherchez un taxi en Seine-et-Marne ?
+                            Nous sommes votre interlocuteur privilégié pour tous vos besoins en taxi dans le département de la Seine-et-Marne. Toprak Transport est votre meilleur choix ! Nous assurons le transport 7 jours sur 7 dans les communes de Fontainebleau (77920), Melun (77000), Montereau-Fault-Yonne (77130), Barbizon (77630), Avon (77210), Nemours (77140), Dammarie-les-lys (77190), Le Mée-sur-Seine (77285), Lieusaint (77127), Bois-le-Roi (77590), Cannes-Ecluse (77130), Donnemarie-Dontilly (77520), Coulommiers (77120), Bagneaux-sur-Loing (77016), Bailly-Romainvilliers (77018), Barbey (77021) ou ailleurs dans le département.
                         </p>
-                        <h4 style="color:#dd3751;">Réservez votre taxi pour rejoindre ou quitter l'aéroport</h4>
+
                         <p>
-                        Vous devez vous rendre à l'aéroport ? Pas de problème ! Toprak Transport peut vous y conduire rapidement et en toute sécurité. Nous savons à quel point il est important d'arriver à l'heure à votre vol, c'est pourquoi nous ferons en sorte que vous arriviez à l'aéroport avec suffisamment de temps.
-                        Nous sommes fiers de notre ponctualité et de notre sécurité, afin que vous puissiez vous détendre et profiter de votre voyage. Pour couronner le tout, nos tarifs sont très compétitifs, vous pouvez donc être sûr d'en avoir pour votre argent.
+                            Voyager peut être stressant, laissez-nous nous occuper du transport pour vous afin que vous puissiez vous concentrer sur votre temps libre. Que ce soit pour les affaires ou les loisirs, nous vous emmènerons là où vous devez aller.
+                            Nos chauffeurs professionnels et courtois seront heureux de vous aider à porter vos bagages et de vous donner des conseils sur la Seine-et-Marne. Réservez un taxi avec Toprak Transport aujourd'hui !
                         </p>
-                        <h4 style="color:#dd3751;">Déplacez-vous en toute sécurité dans la Seine-et-Marne !</h4>
+
+                        <h4 style="color:#dd3751;margin-top:5px;">Réservez votre taxi pour rejoindre ou quitter l'aéroport</h4>
                         <p>
-                        Toprak Transport s'engage à fournir à ses clients une expérience de transport sûre, fiable et confortable. Avec notre équipe de chauffeurs professionnels et nos véhicules modernes, nous pouvons garantir la ponctualité et le professionnalisme pour tous vos besoins de transport.
-                        Nous offrons une variété de services, y compris le transport scolaire, les voyages d'affaires et le transport médical, dans toute la Seine-et-Marne.
+                            Vous devez vous rendre à l'aéroport ? Pas de problème ! Toprak Transport peut vous y conduire rapidement et en toute sécurité. Nous savons à quel point il est important d'arriver à l'heure à votre vol, c'est pourquoi nous ferons en sorte que vous arriviez à l'aéroport avec suffisamment de temps.
+                        </p>
+                        <p>
+                            Nous sommes fiers de notre ponctualité et de notre sécurité, afin que vous puissiez vous détendre et profiter de votre voyage. Pour couronner le tout, nos tarifs sont très compétitifs, vous pouvez donc être sûr d'en avoir pour votre argent.
+                        </p>
+
+                        <h4 style="color:#dd3751;margin-top:5px;">Déplacez-vous en toute sécurité dans la Seine-et-Marne !</h4>
+                        <p>
+                            Toprak Transport s'engage à fournir à ses clients une expérience de transport sûre, fiable et confortable. Avec notre équipe de chauffeurs professionnels et nos véhicules modernes, nous pouvons garantir la ponctualité et le professionnalisme pour tous vos besoins de transport.
+                        </p>
+                        <p>
+                            Nous offrons une variété de services, y compris le transport scolaire, les voyages d'affaires et le transport médical, dans toute la Seine-et-Marne.
                         </p>
                     </div>
 				</div>
