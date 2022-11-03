@@ -261,6 +261,24 @@
                         <p>
                             Le chauffeur promet de vous ramener à temps à votre destination. Votre sécurité est leur priorité numéro un, et si les choses ne semblent pas se dérouler comme prévu en cours de route, les chauffeurs sont toujours à la recherche de solutions appropriées.
                         </p>
+
+                        <h4 style="color:#dd3751;">Toprak Transport : Votre taxi dans le département de la Seine-et-Marne (77)</h4>
+                        <p>
+                        Vous cherchez un taxi en Seine-et-Marne ?
+                        Nous sommes votre interlocuteur privilégié pour tous vos besoins en taxi dans le département de la Seine-et-Marne. Toprak Transport est votre meilleur choix ! Nous assurons le transport 7 jours sur 7 dans les communes d'Achères-la-Forêt (77001), Amillis (77002), Amponville (77003), Andrezel (77004), Annet-sur-Marne (77005), Arbonne-la-Forêt (77006), Argentières (77007), Armentières-en-Brie (77008), Arville (77009), Aubepierre-Ozouer-le-Repos (77010), Aufferville (77011), Augers-en-Brie (77012), Aulnoy (77013), Avon (77014), Baby (77015), Bagneaux-sur-Loing (77016), Bailly-Romainvilliers (77018), Balloy (77019), Bannost-Villegagnon (77020), Barbey (77021) ou ailleurs dans le département.
+                        Voyager peut être stressant, laissez-nous nous occuper du transport pour vous afin que vous puissiez vous concentrer sur votre temps libre. Que ce soit pour les affaires ou les loisirs, nous vous emmènerons là où vous devez aller.
+                        Nos chauffeurs professionnels et courtois seront heureux de vous aider à porter vos bagages et de vous donner des conseils sur la Seine-et-Marne. Réservez un taxi avec Toprak Transport aujourd'hui !
+                        </p>
+                        <h4 style="color:#dd3751;">Réservez votre taxi pour rejoindre ou quitter l'aéroport</h4>
+                        <p>
+                        Vous devez vous rendre à l'aéroport ? Pas de problème ! Toprak Transport peut vous y conduire rapidement et en toute sécurité. Nous savons à quel point il est important d'arriver à l'heure à votre vol, c'est pourquoi nous ferons en sorte que vous arriviez à l'aéroport avec suffisamment de temps.
+                        Nous sommes fiers de notre ponctualité et de notre sécurité, afin que vous puissiez vous détendre et profiter de votre voyage. Pour couronner le tout, nos tarifs sont très compétitifs, vous pouvez donc être sûr d'en avoir pour votre argent.
+                        </p>
+                        <h4 style="color:#dd3751;">Déplacez-vous en toute sécurité dans la Seine-et-Marne !</h4>
+                        <p>
+                        Toprak Transport s'engage à fournir à ses clients une expérience de transport sûre, fiable et confortable. Avec notre équipe de chauffeurs professionnels et nos véhicules modernes, nous pouvons garantir la ponctualité et le professionnalisme pour tous vos besoins de transport.
+                        Nous offrons une variété de services, y compris le transport scolaire, les voyages d'affaires et le transport médical, dans toute la Seine-et-Marne.
+                        </p>
                     </div>
 				</div>
 			</section>
