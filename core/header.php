@@ -1,7 +1,7 @@
 <?php
 require_once "core/functions.php";
 
-$titlePages = ["index.php" => "Toprak Transport : Taxi en Seine-et-Marne", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter"];
+$titlePages = ["index.php" => "Toprak Transport : Taxi en Seine-et-Marne", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter", "confidentialite.php" => "Politique de confidentialité", "cgu.php" => "Conditions générales d'utilisation", "mentions-legales.php" => "Mentions légales"];
 $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Transport : Taxi en Seine-et-Marne";
 ?>
 <!DOCTYPE html>
