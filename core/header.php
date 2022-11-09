@@ -10,9 +10,19 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
     <meta charset="utf-8">
     <meta name="description" content="Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. La référence du taxi en seine-et-marne. Réservez immédiatement en ligne">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="seine-et-marne, fontainebleau, montereau, Taxi, chauffeur, Uber, voyage, réservation, transporteur, aéroport, transport, hopital">
+    <meta name="referrer" content="always">
+    <meta name="robots" content="index, follow">
+
     <title><?= $titlePage ?></title>
 
+    <link rel="canonical" href="https://toprak-transport.fr/<?= basename($_SERVER["SCRIPT_FILENAME"]) ?>">
+
     <link rel="icon" href="../images/custom/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/custom/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <link href="../css/bootstrap.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/style.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -50,6 +60,24 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
 
         gtag('config', 'G-ZG55EC08ET');
     </script>
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="<?= $titlePage ?>">
+    <meta property="og:image" content="https://toprak-transport.fr/images/custom/favicon.png">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="1000">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="https://toprak-transport.fr/<?= basename($_SERVER["SCRIPT_FILENAME"]) ?>">
+    <meta property="og:title" content="<?= $titlePage ?>">
+    <meta property="og:description" content="Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. Contactez-nous au 06.59.74.26.84 ou réservez votre trajet en ligne">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. Contactez-nous au 06.59.74.26.84 ou réservez votre trajet en ligne">
+    <meta name="twitter:title" content="<?= $titlePage ?>">
+    <meta name="twitter:image" content="https://toprak-transport.fr/images/custom/favicon.png">
+
+    <meta name="msapplication-TileColor" content="#DD3751">
+    <meta name="theme-color" content="#DD3751">
 </head>
 <body>
 <div class="tj-wrapper">
