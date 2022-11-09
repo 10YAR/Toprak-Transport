@@ -63,7 +63,7 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="<?= $titlePage ?>">
-    <meta property="og:image" content="https://toprak-transport.fr/images/custom/photo_bann.png">
+    <meta property="og:image" content="https://toprak-transport.fr/images/custom/photo_bann.webp">
     <meta property="og:image:width" content="1000">
     <meta property="og:image:height" content="1000">
     <meta property="og:locale" content="fr_FR">
@@ -74,7 +74,7 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. Contactez-nous au 06.59.74.26.84 ou réservez votre trajet en ligne">
     <meta name="twitter:title" content="<?= $titlePage ?>">
-    <meta name="twitter:image" content="https://toprak-transport.fr/images/custom/photo_bann.png">
+    <meta name="twitter:image" content="https://toprak-transport.fr/images/custom/photo_bann.webp">
 
     <meta name="msapplication-TileColor" content="#DD3751">
     <meta name="theme-color" content="#DD3751">
