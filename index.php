@@ -243,7 +243,7 @@
 								<div class="outer-circle">
 									<div class="inner-circle">
 										<div class="inner-circle2">
-											<img src="images/custom/photo_eiffel.webp" alt="Tour Eiffel" loading="lazy" style="width: 100%;"/>
+											<img src="images/custom/photo_eiffel.webp" alt="trajet Paris Tour Eiffel" loading="lazy" style="width: 100%;"/>
 										</div>
 									</div>
 								</div>

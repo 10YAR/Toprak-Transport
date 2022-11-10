@@ -12,7 +12,7 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="cab-service-box">
 								<figure class="service-thumb">
-									<img src="images/cab-service-icon1.png" alt=""/>
+									<img src="images/restaurant-service.png" alt="transport restaurant"/>
 								</figure>
 								<div class="service-desc">
 									<h4>Restaurants</h4>
@@ -24,7 +24,7 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="cab-service-box">
 								<figure class="service-thumb">
-									<img src="images/cab-service-icon2.png" alt=""/>
+									<img src="images/aeroport-service.png" alt="transport aeroport"/>
 								</figure>
 								<div class="service-desc">
 									<h4>Aéroports</h4>
@@ -35,7 +35,7 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="cab-service-box">
 								<figure class="service-thumb">
-									<img src="images/cab-service-icon3.png" alt=""/>
+									<img src="images/hopital-service.png" alt="transport hopital"/>
 								</figure>
 								<div class="service-desc">
 									<h4>Hopitaux</h4>
@@ -47,7 +47,7 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="cab-service-box">
 								<figure class="service-thumb">
-									<img src="images/cab-service-icon4.png" alt=""/>
+									<img src="images/vacances-service.png" alt="transport vacances"/>
 								</figure>
 								<div class="service-desc">
 									<h4>Loisirs</h4>
@@ -59,7 +59,7 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="cab-service-box">
 								<figure class="service-thumb">
-									<img src="images/cab-service-icon5.png" alt=""/>
+									<img src="images/centre-commercial-service.png" alt="transport centre commercial"/>
 								</figure>
 								<div class="service-desc">
 									<h4>Shopping</h4>
@@ -71,7 +71,7 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="cab-service-box">
 								<figure class="service-thumb">
-									<img src="images/cab-service-icon6.png" alt=""/>
+									<img src="images/mariage-service.png" alt="transport mariage"/>
 								</figure>
 								<div class="service-desc">
 									<h4>Mariages</h4>
