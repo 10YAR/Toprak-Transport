@@ -2,3 +2,6 @@ RewriteEngine on
 ErrorDocument 404 /404.php
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://toprak-transport.fr/$1 [R,L]
+RewriteRule "^services/$" "/services.php" [L]
+RewriteRule "^about-us/$" "/aboutus.php" [L]
+RewriteRule "^contact/$" "/contact.php" [L]

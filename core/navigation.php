@@ -70,15 +70,14 @@
                         <div class="collapse navbar-collapse" id="tj-navbar-collapse">
                             <ul class="nav navbar-nav">
                                 <li>
-                                    <a href="/services.php">Nos Services</a>
+                                    <a href="/services">Nos Services</a>
                                 </li>
                                 <li>
-                                    <a href="/aboutus.php">Qui sommes nous</a>
+                                    <a href="/about-us">Qui sommes nous</a>
                                 </li>
                                 <li>
-                                    <a href="/contact.php">Nous contacter</a>
+                                    <a href="/contact">Nous contacter</a>
                                 </li>
-
                             </ul>
                         </div>
                         <!-- Navigation Content Start -->
