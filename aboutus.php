@@ -37,7 +37,7 @@
 				</div>
 				<div class="col-md-6 col-sm-5">
 					<div class="about-banner bounceInRight animated delay-2s text-center">
-						<img src="images/custom/taxi_arriere.webp" alt="vehicule taxi arrière"/>
+						<img src="/images/custom/taxi_arriere.webp" alt="vehicule taxi arrière"/>
 					</div>
 				</div>
 			</div>
