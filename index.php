@@ -44,7 +44,7 @@
 								<!--Banner Form 2 Tab One Way Section Start-->
 								<div class="tab-pane active" id="one-way">
 									<!--Banner Form 2 Content Start-->
-									<form method="POST" class="trip-frm2 booking-frm" action="reservation.php">
+									<form method="POST" class="trip-frm2 booking-frm" action="/reservation">
 										<div class="col-md-12 col-sm-12">
 											<h4>Départ</h4>
 											<div class="field-box">
