@@ -340,10 +340,11 @@ function sluggify($url): string
 
 function createActualite($title, $actu_html, $image) {
     global $db;
-    $ins = $db->prepare("INSERT INTO actualites (title, actu_html, actu, image) VALUES (:title, :actu_html, :actu, :image)");
+    $ins = $db->prepare("INSERT INTO actualites (title, actu_html, actu, image, created_at) VALUES (:title, :actu_html, :actu, :image, :created_at)");
     $ins->bindValue(':title', $title);
     $ins->bindValue(':actu_html', $actu_html);
     $ins->bindValue(':actu', strip_tags($actu_html));
     $ins->bindValue(':image', $image);
+    $ins->bindValue(':created_at', date("Y-m-d H:i:s"));
     return $ins->execute();
 }
