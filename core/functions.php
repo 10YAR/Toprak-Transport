@@ -1,6 +1,10 @@
 <?php
 
+use Longman\TelegramBot\Exception\TelegramException;
 use Longman\TelegramBot\Request;
+use Longman\TelegramBot\Telegram;
+use SendinBlue\Client\Model\CreateContact;
+use SendinBlue\Client\Model\SendSmtpEmail;
 
 require_once "vendor/autoload.php";
 require_once "core/SQL.php";
@@ -10,7 +14,9 @@ date_default_timezone_set('Europe/Paris');
 setlocale(LC_ALL, 'fr_FR.utf8','fra');
 $captcha_public_v3 = getenv('CAPTCHA_PUBLIC_V3');
 $captcha_private_v3 = getenv('CAPTCHA_PRIVATE_V3');
-if (getenv("ENV") == "test") ini_set("display_errors", 1);
+if (getenv("ENV") === "test") {
+    ini_set("display_errors", 1);
+}
 $FILE = $_SERVER['PHP_SELF'];
 
 /**
@@ -25,10 +31,14 @@ $FILE = $_SERVER['PHP_SELF'];
  * @param $tel
  * @param $email
  * @param $price
+ * @param $distance
+ * @param $duration
  * @return bool
  * @throws JsonException
+ * @throws TelegramException
  */
-function saveBooking($trip_date, $trip_time, $pick_address, $drop_address, $pick_place_id, $drop_place_id, $retour, $nom, $tel, $email, $price, $distance, $duration) {
+function saveBooking($trip_date, $trip_time, $pick_address, $drop_address, $pick_place_id, $drop_place_id, $retour, $nom, $tel, $email, $price, $distance, $duration): bool
+{
     global $db;
 
     $stmt = $db->prepare("INSERT INTO bookings (trip_date, trip_time, pick_address, drop_address, pick_place_id, drop_place_id, price, retour, nom, tel, email, status) 
@@ -68,9 +78,14 @@ function saveBooking($trip_date, $trip_time, $pick_address, $drop_address, $pick
  * @param $bookingToken
  * @return bool
  */
-function sendConfirmationEmail($email, $nom, $trip_date, $trip_time, $pick_address, $drop_addresss, $price, $retour, $bookingToken) {
-    if ($retour) $retourMessage = "(Trajet aller-retour)";
-    else $retourMessage = "(Trajet aller simple)";
+function sendConfirmationEmail($email, $nom, $trip_date, $trip_time, $pick_address, $drop_addresss, $price, $retour, $bookingToken): bool
+{
+    if ($retour) {
+        $retourMessage = "(Trajet aller-retour)";
+    }
+    else {
+        $retourMessage = "(Trajet aller simple)";
+    }
 
     $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', getenv("SENDINBLUE_API_KEY"));
 
@@ -78,7 +93,7 @@ function sendConfirmationEmail($email, $nom, $trip_date, $trip_time, $pick_addre
         new GuzzleHttp\Client(),
         $config
     );
-    $sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail();
+    $sendSmtpEmail = new SendSmtpEmail();
     $sendSmtpEmail['to'] = array(array('email' => $email , 'name' => $nom));
     $sendSmtpEmail['templateId'] = 14;
     $sendSmtpEmail['params'] = array(
@@ -91,7 +106,7 @@ function sendConfirmationEmail($email, $nom, $trip_date, $trip_time, $pick_addre
         'cancel' => $bookingToken);
 
     try {
-        $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
+        $apiInstance->sendTransacEmail($sendSmtpEmail);
         return true;
     } catch (Exception $e) {
         mail(getenv("ADMIN_EMAIL"), "Erreur lors de l'envoi de l'email", $e->getMessage());
@@ -105,7 +120,8 @@ function sendConfirmationEmail($email, $nom, $trip_date, $trip_time, $pick_addre
  * @param $tel
  * @return bool
  */
-function createSendinblueContact($name, $email, $tel) {
+function createSendinblueContact($name, $email, $tel): bool
+{
     // Converts the attributes to a format that SendinBlue can understand
     $name = explode(" ", $name);
     $firstname = $name[0];
@@ -118,14 +134,14 @@ function createSendinblueContact($name, $email, $tel) {
         new GuzzleHttp\Client(),
         $config
     );
-    $createContact = new \SendinBlue\Client\Model\CreateContact(); // Values to create a contact
+    $createContact = new CreateContact(); // Values to create a contact
     $createContact['email'] = $email;
     $createContact["updateEnabled"] = true;
     $createContact['listIds'] = [6];
     $createContact['attributes'] = array('NOM' => $firstname, "PRENOM" => $lastname, 'SMS' => $tel);
 
     try {
-        $result = $apiInstance->createContact($createContact);
+        $apiInstance->createContact($createContact);
         return true;
     } catch (Exception $e) {
         mail(getenv("ADMIN_EMAIL"), "Erreur lors de l'ajout du contact SendinBlue", $e->getMessage());
@@ -134,19 +150,17 @@ function createSendinblueContact($name, $email, $tel) {
 }
 
 /**
- * @param $cancel
+ * @param $bookingToken
  * @return bool
+ * @throws JsonException
+ * @throws TelegramException
  */
-function cancelBooking($bookingToken) {
+function cancelBooking($bookingToken): bool
+{
     global $db;
-    $bookingToken = json_decode(base64_decode(urldecode($bookingToken)), JSON_THROW_ON_ERROR);
-    $sel = $db->prepare("SELECT * FROM bookings WHERE id = :id AND email = :email");
-    $sel->bindValue(':id', $bookingToken[0]);
-    $sel->bindValue(':email', $bookingToken[1]);
-    $datas = $sel->execute();
-    $datas = $datas->fetchArray(SQLITE3_ASSOC);
+    $datas = getBooking($bookingToken);
 
-    if ($datas['status'] != 'canceled') {
+    if ($datas['status'] !== 'canceled') {
         $stmt = $db->prepare("UPDATE bookings SET status = :status WHERE id = :id AND email = :email");
         $stmt->bindValue(':status', "canceled");
         $stmt->bindValue(':id', $bookingToken[0]);
@@ -159,20 +173,17 @@ function cancelBooking($bookingToken) {
 }
 
 /**
- * @param $accept
+ * @param $bookingToken
  * @return bool
+ * @throws JsonException
+ * @throws TelegramException
  */
-function acceptBooking($bookingToken) {
+function acceptBooking($bookingToken): bool
+{
     global $db;
-    $bookingToken = json_decode(base64_decode(urldecode($bookingToken)), JSON_THROW_ON_ERROR);
+    $datas = getBooking($bookingToken);
 
-    $sel = $db->prepare("SELECT * FROM bookings WHERE id = :id AND email = :email");
-    $sel->bindValue(':id', $bookingToken[0]);
-    $sel->bindValue(':email', $bookingToken[1]);
-    $datas = $sel->execute();
-    $datas = $datas->fetchArray(SQLITE3_ASSOC);
-
-    if ($datas['status'] == 'pending') {
+    if ($datas['status'] === 'pending') {
         $stmt = $db->prepare("UPDATE bookings SET status = :status WHERE id = :id AND email = :email");
         $stmt->bindValue(':status', "accepted");
         $stmt->bindValue(':id', $bookingToken[0]);
@@ -187,7 +198,19 @@ function acceptBooking($bookingToken) {
 }
 
 /**
- * @return false|\Longman\TelegramBot\Telegram
+ * @throws JsonException
+ */
+function getBooking($bookingToken) {
+    global $db;
+    $bookingToken = json_decode(base64_decode(urldecode($bookingToken)), true, 512, JSON_THROW_ON_ERROR);
+    $sel = $db->prepare("SELECT * FROM bookings WHERE id = :id AND email = :email");
+    $sel->bindValue(':id', $bookingToken[0]);
+    $sel->bindValue(':email', $bookingToken[1]);
+    return $sel->execute()->fetchArray(SQLITE3_ASSOC);
+}
+
+/**
+ * @return false|Telegram
  */
 function initTelegram() {
     $bot_api_key  = getenv("TELEGRAM_BOT_API_KEY");
@@ -197,7 +220,6 @@ function initTelegram() {
         $telegram = new Longman\TelegramBot\Telegram($bot_api_key, $bot_username);
         $telegram->handleGetUpdates();
     } catch (Longman\TelegramBot\Exception\TelegramException $e) {
-        //var_dump($e->getMessage());
         mail(getenv("ADMIN_EMAIL"), "Erreur lors de l'initialisation Telegram", $e->getMessage());
         return false;
     }
@@ -208,11 +230,11 @@ function initTelegram() {
 /**
  * @param $message
  * @return void
- * @throws \Longman\TelegramBot\Exception\TelegramException
+ * @throws TelegramException
  */
 function sendTelegramMessage($message) {
-    $telegram = initTelegram();
-    $result = Request::sendMessage([
+    initTelegram();
+    Request::sendMessage([
         'chat_id' => getenv("TELEGRAM_CHAT_ID"),
         'text'    => $message,
         'parse_mode' => "MARKDOWN"
@@ -226,19 +248,29 @@ function sendTelegramMessage($message) {
  * @param $trip_time
  * @param $pick_address
  * @param $drop_address
+ * @param $pick_place_id
+ * @param $drop_place_id
  * @param $price
  * @param $retour
+ * @param $bookingToken
+ * @param $distance
+ * @param $duration
  * @return void
- * @throws \Longman\TelegramBot\Exception\TelegramException
+ * @throws TelegramException
  */
-function sendTelegramBooking($name, $tel, $trip_date, $trip_time, $pick_address, $drop_address, $pick_place_id, $drop_place_id, $price, $retour, $bookingToken, $distance, $duration) {
-    if ($retour === "true") $retourMessage = "(Trajet *aller-retour*)";
-    else $retourMessage = "(Trajet aller simple)";
+function sendTelegramBooking($name, $tel, $trip_date, $trip_time, $pick_address, $drop_address, $pick_place_id, $drop_place_id, $price, $retour, $bookingToken, $distance, $duration): void
+{
+    if ($retour === "true") {
+        $retourMessage = "(Trajet *aller-retour*)";
+    }
+    else {
+        $retourMessage = "(Trajet aller simple)";
+    }
 
     $duration = str_replace([" hour", " mins"], ["h", "min"], $duration);
     $telegram = initTelegram();
     if ($telegram) {
-        $result = Request::sendMessage([
+         Request::sendMessage([
             'chat_id' => getenv("TELEGRAM_CHAT_ID"),
             'text'    => "*---Nouvelle course---*\n\n"
                 . "*$name ($tel)*\n"
@@ -253,4 +285,65 @@ function sendTelegramBooking($name, $tel, $trip_date, $trip_time, $pick_address,
             'disable_web_page_preview' => true
         ]);
     }
+}
+
+/**
+ * @return array|false
+ */
+function getActualites()
+{
+    global $db;
+    $sel = $db->prepare("SELECT * FROM actualites WHERE status = 1 ORDER BY created_at DESC");
+    $results = $sel->execute();
+    $datas = [];
+    while ($res = $results->fetchArray(SQLITE3_ASSOC))
+    {
+        array_push($datas, $res);
+    }
+    return $datas;
+}
+
+/**
+ * @param $id
+ * @return array|false
+ */
+function getActualite($id) {
+    global $db;
+    $sel = $db->prepare("SELECT * FROM actualites WHERE id = :id");
+    $sel->bindValue(':id', $id);
+    return $sel->execute()->fetchArray(SQLITE3_ASSOC);
+}
+
+/**
+ * @param $url
+ * @return string
+ */
+function sluggify($url): string
+{
+    # Prep string with some basic normalization
+    # Remove quotes (can't, etc.)
+    $url = str_replace(array('\'', 'é', 'è', 'ê', 'à', 'ç', 'ô', 'î'), array('', 'e', 'e', 'e', 'a', 'c', 'o', 'i'), $url);
+    $url = strtolower($url);
+    $url = strip_tags($url);
+    $url = stripslashes($url);
+
+    $url = html_entity_decode($url);
+    # Replace non-alpha numeric with hyphens
+    $match = '/[^a-z0-9]+/';
+    $replace = '-';
+    $url = preg_replace($match, $replace, $url);
+
+    $url = trim($url, '-');
+
+    return $url;
+}
+
+function createActualite($title, $actu_html, $image) {
+    global $db;
+    $ins = $db->prepare("INSERT INTO actualites (title, actu_html, actu, image) VALUES (:title, :actu_html, :actu, :image)");
+    $ins->bindValue(':title', $title);
+    $ins->bindValue(':actu_html', $actu_html);
+    $ins->bindValue(':actu', strip_tags($actu_html));
+    $ins->bindValue(':image', $image);
+    return $ins->execute();
 }

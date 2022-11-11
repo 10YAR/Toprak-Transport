@@ -68,9 +68,12 @@
                         </div>
                         <!-- Navigation Content Start -->
                         <div class="collapse navbar-collapse" id="tj-navbar-collapse">
-                            <ul class="nav navbar-nav">
+                            <ul class="nav navbar-nav" style="margin-left:15px;">
                                 <li>
                                     <a href="/services">Nos Services</a>
+                                </li>
+                                <li>
+                                    <a href="/actualites">Actualités</a>
                                 </li>
                                 <li>
                                     <a href="/about-us">Qui sommes nous</a>

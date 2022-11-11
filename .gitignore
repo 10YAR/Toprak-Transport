@@ -4,3 +4,5 @@ core/toprak.db
 idea/
 .idea/
 .vscode/
+images/uploads/*
+!images/uploads/.gitkeep

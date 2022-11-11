@@ -5,6 +5,7 @@
         "vlucas/phpdotenv": "^5.4",
         "sendinblue/api-v3-sdk": "8.x.x",
       "ext-curl": "*",
-        "longman/telegram-bot": "^0.77.1"
+        "longman/telegram-bot": "^0.77.1",
+      "ext-json": "*"
     }
 }

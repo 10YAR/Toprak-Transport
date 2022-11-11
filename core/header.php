@@ -1,7 +1,7 @@
 <?php
 require_once "core/functions.php";
 
-$titlePages = ["index.php" => "Toprak Transport : Taxi à Fontainebleau et Montereau", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter", "confidentialite.php" => "Politique de confidentialité", "cgu.php" => "Conditions générales d'utilisation", "mentions-legales.php" => "Mentions légales"];
+$titlePages = ["index.php" => "Toprak Transport : Taxi à Fontainebleau et Montereau", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter", "confidentialite.php" => "Politique de confidentialité", "cgu.php" => "Conditions générales d'utilisation", "mentions-legales.php" => "Mentions légales", "actualites.php" => "Actualités taxi et chauffeurs"];
 $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Transport : Taxi à Fontainebleau et Montereau";
 ?>
 <!DOCTYPE html>
@@ -33,6 +33,10 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
     <link href="../css/responsive.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/icomoon.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/flatpickr.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <?php if (basename($_SERVER["SCRIPT_FILENAME"]) === "actualites.php") { ?>
+    <link href="../css/actus.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
+    <?php } ?>
 
     <noscript>
         <link href="../css/bootstrap.css" rel="stylesheet">

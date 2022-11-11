@@ -1,7 +1,7 @@
 RewriteEngine on
 ErrorDocument 404 /404.php
 RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ https://toprak-transport.fr/$1 [R,L]
+#RewriteRule ^(.*)$ https://toprak-transport.fr/$1 [R,L]
 RewriteRule "^services$" "/services.php" [L]
 RewriteRule "^about-us$" "/aboutus.php" [L]
 RewriteRule "^contact$" "/contact.php" [L]
@@ -9,3 +9,6 @@ RewriteRule "^mentions-legales$" "/mentions-legales.php" [L]
 RewriteRule "^conditions-generales-d-utilisation$" "/cgu.php" [L]
 RewriteRule "^politique-de-confidentialite$" "/confidentialite.php" [L]
 RewriteRule "^reservation$" "/reservation.php" [L]
+RewriteRule "^actualites$" "/actualites.php" [L]
+RewriteRule "^actualite/create$" "/actualites.php?action=create" [L]
+RewriteRule "^actualite/(.*)$" "/actualites.php?action=read&id=$1" [L]
