@@ -1,8 +1,8 @@
 <?php
 require_once "core/functions.php";
 
-$titlePages = ["index.php" => "Toprak Transport : Taxi à Fontainebleau et Montereau", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter", "confidentialite.php" => "Politique de confidentialité", "cgu.php" => "Conditions générales d'utilisation", "mentions-legales.php" => "Mentions légales", "actualites.php" => "Actualités taxi et chauffeurs"];
-$titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Transport : Taxi à Fontainebleau et Montereau";
+$titlePages = ["index.php" => "Toprak Transport : Service de Taxi à Fontainebleau et Montereau", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter", "confidentialite.php" => "Politique de confidentialité", "cgu.php" => "Conditions générales d'utilisation", "mentions-legales.php" => "Mentions légales", "actualites.php" => "Actualités taxi et chauffeurs"];
+$titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Transport : Service de Taxi à Fontainebleau et Montereau";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,7 +10,7 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
     <meta charset="utf-8">
     <meta name="description" content="Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. La référence du taxi en seine-et-marne. Réservez immédiatement en ligne">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="fontainebleau, montereau, Taxi, chauffeur, seine-et-marne, Uber, voyage, réservation, transporteur, aéroport, transport, hopital">
+    <meta name="keywords" content="fontainebleau, montereau, Taxi, VTC, chauffeur, seine-et-marne, Uber, voyage, réservation, transporteur, aéroport, transport, hopital">
     <meta name="referrer" content="always">
     <meta name="robots" content="index, follow">
 
