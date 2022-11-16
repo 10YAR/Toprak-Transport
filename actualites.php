@@ -137,7 +137,7 @@
                                 </div>
                                 <ul class="postcard__tagbox">
                                     <li class="tag__item play <?= $pickedColor ?>">
-                                        <a href="/actualite/<?= $acturl ?>"><i class="fas fa-play mr-2"></i> Lire l'article</a>
+                                        <a href="/actualite/<?= $acturl ?>" rel="dofollow"><i class="fas fa-play mr-2"></i> Lire l'article</a>
                                     </li>
                                 </ul>
                             </div>

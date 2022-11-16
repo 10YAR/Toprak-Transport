@@ -4,7 +4,6 @@ User-agent: *
 Disallow: /*core/*
 Disallow: /*css/*
 Disallow: /*fonts/*
-Disallow: /*images/*
 Disallow: /*js/*
 Disallow: /*vendor/*
 Disallow: /*webfonts/*
