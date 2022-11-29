@@ -1,6 +1,11 @@
 <?php
 require_once "core/functions.php";
 
+if (isset($_GET['action']) && $_GET['action'] === "read") {
+    $id = explode("-", $_GET['id'])[0];
+    $actu = getActualite($id);
+}
+
 $titlePages = ["index.php" => "Toprak Transport : Service de Taxi à Fontainebleau et Montereau", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter", "confidentialite.php" => "Politique de confidentialité", "cgu.php" => "Conditions générales d'utilisation", "mentions-legales.php" => "Mentions légales", "actualites.php" => "Actualités taxi et chauffeurs"];
 $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Transport : Service de Taxi à Fontainebleau et Montereau";
 ?>
@@ -8,9 +13,9 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. La référence du taxi en seine-et-marne. Réservez immédiatement en ligne">
+    <meta name="description" content="<?= $actu['description'] ?? "Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. La référence du taxi en seine-et-marne. Réservez immédiatement en ligne"?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="fontainebleau, montereau, Taxi, VTC, chauffeur, seine-et-marne, Uber, voyage, réservation, transporteur, aéroport, transport, hopital">
+    <meta name="keywords" content="<?= $actu['keywords'] ?? "fontainebleau, montereau, Taxi, VTC, chauffeur, seine-et-marne, Uber, voyage, réservation, transporteur, aéroport, transport, hopital" ?>">
     <meta name="referrer" content="always">
     <meta name="robots" content="index, follow">
 
@@ -56,13 +61,13 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" defer></script>
     <![endif]-->
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZG55EC08ET"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11032844317"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-ZG55EC08ET');
+        gtag('config', 'AW-11032844317');
     </script>
 
     <script type="application/ld+json">
@@ -87,10 +92,10 @@ $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Trans
     <meta property="og:locale" content="fr_FR">
     <meta property="og:url" content="https://toprak-transport.fr/<?= basename($_SERVER["SCRIPT_FILENAME"]) ?>">
     <meta property="og:title" content="<?= $titlePage ?>">
-    <meta property="og:description" content="Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. Contactez-nous au 06.59.74.26.84 ou réservez votre trajet en ligne">
+    <meta property="og:description" content="<?= $actu['description'] ?? "Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. Contactez-nous au 06.59.74.26.84 ou réservez votre trajet en ligne"?>">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description" content="Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. Contactez-nous au 06.59.74.26.84 ou réservez votre trajet en ligne">
+    <meta name="twitter:description" content="<?= $actu['description'] ?? "Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. Contactez-nous au 06.59.74.26.84 ou réservez votre trajet en ligne"?>">
     <meta name="twitter:title" content="<?= $titlePage ?>">
     <meta name="twitter:image" content="https://toprak-transport.fr/images/custom/photo_banner.webp">
 

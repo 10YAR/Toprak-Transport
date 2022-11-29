@@ -5,8 +5,6 @@
     <div class="container">
         <div class="row">
             <?php if (isset($_GET['action']) && $_GET['action'] === "read") {
-                $id = explode("-", $_GET['id'])[0];
-                $actu = getActualite($id);
                 $pickedColor = $colors[array_rand($colors)];
                 try {
                     $date = new DateTime($actu['created_at']);
@@ -51,7 +49,10 @@
                     $title = $_POST['title'];
                     $content = $_POST['content'];
                     $image = $_POST['image'];
-                    $actu = createActualite($title, $content, $image);
+                    $description = $_POST['description'];
+                    $keywords = $_POST['keywords'];
+
+                    $actu = createActualite($title, $content, $image, $description, $keywords);
                     if ($actu) {
                         echo '<div class="alert alert-success" role="alert">Actualité créée avec succès !</div>';
                     } else {
@@ -75,6 +76,16 @@
                                     <div class="info-field">
                                         <label>Titre</label>
                                         <input type="text" name="title" placeholder="Entrez un titre d'article" required/>
+                                    </div>
+
+                                    <div class="info-field">
+                                        <label>Meta Description</label>
+                                        <input type="text" name="title" placeholder="Entrez la description de l'article (pour la balise meta)" required/>
+                                    </div>
+
+                                    <div class="info-field">
+                                        <label>Meta Keywords</label>
+                                        <input type="text" name="title" placeholder="Entrez les mots clés de l'article séparés par une virgule (pour la balise meta)" required/>
                                     </div>
                                 </h1>
                                 <div class="postcard__preview-txt">

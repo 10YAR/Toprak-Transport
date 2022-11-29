@@ -338,13 +338,15 @@ function sluggify($url): string
     return $url;
 }
 
-function createActualite($title, $actu_html, $image) {
+function createActualite($title, $actu_html, $image, $description, $keywords) {
     global $db;
-    $ins = $db->prepare("INSERT INTO actualites (title, actu_html, actu, image, created_at) VALUES (:title, :actu_html, :actu, :image, :created_at)");
+    $ins = $db->prepare("INSERT INTO actualites (title, actu_html, actu, image, description, keywords, created_at) VALUES (:title, :actu_html, :actu, :image, :description, :keywords, :created_at)");
     $ins->bindValue(':title', $title);
     $ins->bindValue(':actu_html', $actu_html);
     $ins->bindValue(':actu', strip_tags($actu_html));
     $ins->bindValue(':image', $image);
+    $ins->bindValue(':description', $description);
+    $ins->bindValue(':keywords', $keywords);
     $ins->bindValue(':created_at', date("Y-m-d H:i:s"));
     return $ins->execute();
 }
