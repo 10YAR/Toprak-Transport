@@ -80,12 +80,12 @@
 
                                     <div class="info-field">
                                         <label>Meta Description</label>
-                                        <input type="text" name="title" placeholder="Entrez la description de l'article (pour la balise meta)" required/>
+                                        <input type="text" name="description" placeholder="Entrez la description de l'article (pour la balise meta)" required/>
                                     </div>
 
                                     <div class="info-field">
                                         <label>Meta Keywords</label>
-                                        <input type="text" name="title" placeholder="Entrez les mots clés de l'article séparés par une virgule (pour la balise meta)" required/>
+                                        <input type="text" name="keywords" placeholder="Entrez les mots clés de l'article séparés par une virgule (pour la balise meta)" required/>
                                     </div>
                                 </h1>
                                 <div class="postcard__preview-txt">
