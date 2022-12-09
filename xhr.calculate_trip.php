@@ -86,7 +86,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     }
 
     // Définition des tranches de prix supplémentaires
-    $tranches = array("O" => 0, "A" => 15, "B" => 20, "C" => 30, "D" => 40);
+    $tranches = array("O" => 7, "A" => 15, "B" => 20, "C" => 30, "D" => 40);
 
     // Si réservation de nuit... prix plus cher!
     if ($pick_hour > 23 OR $pick_hour < 7)
