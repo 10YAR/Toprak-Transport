@@ -57,28 +57,28 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         $price = 30;
         $tranche = "A";
     }elseif ($value_distance > 15000 AND $value_distance < 20000) {
-        $price = 34;
+        $price = 35;
         $tranche = "B";
     }elseif ($value_distance > 20000 AND $value_distance < 30000) {
-        $price = 39;
+        $price = 40;
         $tranche = "B";
     }elseif ($value_distance > 30000 AND $value_distance < 40000) {
-        $price = 59;
+        $price = 50;
         $tranche = "B";
     }elseif ($value_distance > 40000 AND $value_distance < 50000) {
-        $price = 69;
+        $price = 60;
         $tranche = "C";
     }elseif ($value_distance > 50000 AND $value_distance < 60000) {
-        $price = 79;
+        $price = 90;
         $tranche = "C";
     }elseif ($value_distance > 60000 AND $value_distance < 70000) {
-        $price = 99;
+        $price = 80;
         $tranche = "C";
     }elseif ($value_distance > 70000 AND $value_distance < 80000) {
-        $price = 129;
+        $price = 110;
         $tranche = "D";
     }elseif ($value_distance > 80000 AND $value_distance < 90000) {
-        $price = 139;
+        $price = 120;
         $tranche = "D";
     }else {
         $price = ceil((($value_distance / 10000) * 16) / 10) * 10;
