@@ -63,25 +63,25 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         $price = 40;
         $tranche = "B";
     }elseif ($value_distance > 30000 AND $value_distance < 40000) {
-        $price = 50;
+        $price = 60;
         $tranche = "B";
     }elseif ($value_distance > 40000 AND $value_distance < 50000) {
-        $price = 60;
+        $price = 70;
         $tranche = "C";
     }elseif ($value_distance > 50000 AND $value_distance < 60000) {
-        $price = 90;
-        $tranche = "C";
-    }elseif ($value_distance > 60000 AND $value_distance < 70000) {
         $price = 80;
         $tranche = "C";
+    }elseif ($value_distance > 60000 AND $value_distance < 70000) {
+        $price = 90;
+        $tranche = "C";
     }elseif ($value_distance > 70000 AND $value_distance < 80000) {
-        $price = 110;
+        $price = 100;
         $tranche = "D";
     }elseif ($value_distance > 80000 AND $value_distance < 90000) {
-        $price = 120;
+        $price = 110;
         $tranche = "D";
     }else {
-        $price = ceil((($value_distance / 10000) * 16) / 10) * 10;
+        $price = ceil((($value_distance / 10000) * 15) / 10) * 10;
         $tranche = "D";
     }
 
@@ -104,7 +104,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         if ($price < 50)
             $price += $tranches[$tranche];
         else
-            $price += ($price / 10) * 2.6;
+            $price += ($price / 10) * 2.3;
     }
 
     // Si c'est un trajet aller retour...
@@ -118,7 +118,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     if ($value_distance_from_home > 40000) {
         $price += (($price / 3) * 3.0);
     }elseif ($value_distance_from_home > 45000) {
-        $price += (($price / 3) * 6.0);
+        $price += (($price / 3) * 5.0);
     }
 
     $duration_text = str_replace([" hour", " mins"], ["h", "min"], $duration_text);
