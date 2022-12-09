@@ -81,7 +81,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         $price = 110;
         $tranche = "D";
     }else {
-        $price = ceil((($value_distance / 10000) * 18) / 10) * 10;
+        $price = ceil((($value_distance / 10000) * 16) / 10) * 10;
         $tranche = "D";
     }
 
