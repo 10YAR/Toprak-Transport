@@ -81,12 +81,12 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         $price = 110;
         $tranche = "D";
     }else {
-        $price = ceil((($value_distance / 10000) * 15) / 10) * 10;
+        $price = ceil((($value_distance / 10000) * 16) / 10) * 10;
         $tranche = "D";
     }
 
     // Définition des tranches de prix supplémentaires
-    $tranches = array("A" => 15, "B" => 20, "C" => 40, "D" => 50);
+    $tranches = array("A" => 15, "B" => 20, "C" => 30, "D" => 40);
 
     // Si réservation de nuit... prix plus cher!
     if ($pick_hour > 20 OR $pick_hour < 8)
