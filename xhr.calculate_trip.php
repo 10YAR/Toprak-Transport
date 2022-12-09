@@ -48,10 +48,10 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     $duration_text = $distance->routes[0]->legs[0]->duration->text;
 
     if ($value_distance < 5000) {
-        $price = 19;
+        $price = 10;
         $tranche = "A";
     }elseif ($value_distance > 5000 AND $value_distance < 10000) {
-        $price = 25;
+        $price = 20;
         $tranche = "A";
     }elseif ($value_distance > 10000 AND $value_distance < 15000) {
         $price = 30;
