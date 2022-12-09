@@ -89,7 +89,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     $tranches = array("A" => 15, "B" => 20, "C" => 30, "D" => 40);
 
     // Si réservation de nuit... prix plus cher!
-    if ($pick_hour > 20 OR $pick_hour < 8)
+    if ($pick_hour > 23 OR $pick_hour < 7)
         $price += $tranches[$tranche];
 
     // Diff heures
