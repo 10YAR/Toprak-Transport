@@ -11,7 +11,7 @@ if(!empty($_POST['contact_form'])) {
     $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $captcha_private_v3 . '&response=' . $recaptcha_response);
     $recaptcha = json_decode($recaptcha);
 
-    if ($recaptcha->score > 0.7) {
+    if ($recaptcha->score > 0.8) {
 
         $name = filter_var($_POST['nom'], FILTER_SANITIZE_STRING);
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
@@ -94,13 +94,13 @@ function getUserIp() {
                     <div class="add-info">
                         <span class="icon-phone icomoon"></span>
                         <p>
-                            <a href="tel:0659742684">06.59.74.26.84</a>
+                            <a href="tel:0659742684" title="Contact téléphone">06.59.74.26.84</a>
                         </p>
                     </div>
                     <div class="add-info">
                         <span class="icon-mail-envelope-open icomoon"></span>
                         <p>
-                            <a href="mailto:contact@toprak-transport.fr">
+                            <a href="mailto:contact@toprak-transport.fr" title="Contact email">
                                 contact@toprak-transport.fr
                             </a>
                         </p>

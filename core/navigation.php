@@ -6,8 +6,8 @@
             <div class="col-md-3 col-xs-12 col-sm-4">
                 <!--Logo Start-->
                 <div class="tj-logo">
-                    <a href="/">
-                        <img src="/images/custom/logo.webp" alt="Logo Toprak Transport" height="91" style="height:91px;" />
+                    <a href="/" title="Toprak Transport">
+                        <img src="/images/custom/logo.webp" alt="Logo Toprak Transport" height="91" width="300" style="height:91px;" loading="lazy"/>
                     </a>
                 </div>
                 <!--Logo End-->
@@ -27,7 +27,7 @@
                     <i class="fa fa-envelope"></i>
                     <div class="info_text">
                         <span class="info_title">Nous contacter</span>
-                        <span><a href="mailto:contact@toprak-transport.fr" style="text-decoration: none;">contact@toprak-transport.fr</a></span>
+                        <span><a href="mailto:contact@toprak-transport.fr" title="Contact Email" style="text-decoration: none;">contact@toprak-transport.fr</a></span>
                     </div>
                     </a>
                 </div>
@@ -35,10 +35,10 @@
             <div class="col-md-3 col-xs-12 no-display-mobile">
                 <div class="phone_info">
                     <div class="phone_icon">
-                        <a href="tel:0659742684"> <i class="fas fa-phone-volume"></i> </a>
+                        <a href="tel:0659742684" title="Contact Téléphone"> <i class="fas fa-phone-volume"></i> </a>
                     </div>
                     <div class="phone_text">
-                        <span><a href="tel:0659742684">06.59.74.26.84</a></span>
+                        <span><a href="tel:0659742684" title="Contact Téléphone">06.59.74.26.84</a></span>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                         <div class="navbar-header">
                             <ul class="nav navbar-nav" style="float:left;">
                                 <li>
-                                    <a href="/#book">Réserver un Taxi</a>
+                                    <a href="/#book" title="Réserver un Taxi">Réserver un Taxi</a>
                                 </li>
                             </ul>
                             <button type="button" class="navbar-toggle collapsed" style="margin-top:12px;" data-toggle="collapse" data-target="#tj-navbar-collapse" aria-expanded="false">
@@ -70,16 +70,16 @@
                         <div class="collapse navbar-collapse" id="tj-navbar-collapse">
                             <ul class="nav navbar-nav" style="margin-left:15px;">
                                 <li>
-                                    <a href="/services">Nos Services</a>
+                                    <a href="/services" title="Nos Services">Nos Services</a>
                                 </li>
                                 <li>
-                                    <a href="/actualites">Actualités</a>
+                                    <a href="/actualites" title="Actualités">Actualités</a>
                                 </li>
                                 <li>
-                                    <a href="/about-us">Qui sommes nous</a>
+                                    <a href="/about-us" title="Qui sommes nous">Qui sommes nous</a>
                                 </li>
                                 <li>
-                                    <a href="/contact">Nous contacter</a>
+                                    <a href="/contact" title="Nous contacter">Nous contacter</a>
                                 </li>
                             </ul>
                         </div>
@@ -87,7 +87,7 @@
                     </nav>
                     <!--Menu Holder End-->
                     <div class="book_btn hover-button">
-                        <a href="<?= $FILE == '/index.php' ? '#book' : '/#book' ?>">Réservation <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        <a href="<?= $FILE == '/index.php' ? '#book' : '/#book' ?>" title="Réservation">Réservation <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                 </div><!--Nav Holder End-->
             </div>

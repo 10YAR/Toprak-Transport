@@ -198,44 +198,6 @@
 				</div>
 			</section>
 			<!--FAQ Section End-->
-			
-			<!--App Section Start-->
-			<section class="tj-app">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-sm-7">
-							<div class="app-info">
-								<div class="tj-heading-style">
-									<h3>Download our App</h3>
-								</div>
-								<p>Lorem Ipsum passages, and more recently with desktop publishing software like aldus pageMaker including versions of all the generators.</p>
-								<ul class="feature-list">
-									<li><i class="fa fa-check" aria-hidden="true"></i>Book for Others</li>
-									<li><i class="fa fa-check" aria-hidden="true"></i>No-Surge Price 24/7</li>
-									<li><i class="fa fa-check" aria-hidden="true"></i>Chauffeur-drive</li>
-									<li><i class="fa fa-check" aria-hidden="true"></i>Well maintained Cabs</li>
-								</ul>
-								<div class="app-links">
-									<a href="#"><img src="images/app-store.jpg" alt=""/></a>
-									<a href="#"><img src="images/google-play.jpg" alt=""/></a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-5">
-							<div class="app-banner-wrap">
-								<div class="outer-circle">
-									<div class="inner-circle">
-										<div class="inner-circle2">
-											<img src="images/mobile-app-img.png" alt=""/>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--App Section End-->
 
 <?php require_once "core/bandeau-footer.php"; ?>
 <?php require_once "core/footer.php"; ?>

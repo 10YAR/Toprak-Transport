@@ -13,8 +13,8 @@
                 <div class="copyright_text">
                     <p>
                         &copy; Copyright <?= date("Y") ?> Toprak Transport - Taxi en Seine-et-Marne<br />
-                        <a href="/mentions-legales">Mentions légales</a> - <a href="/conditions-generales-d-utilisation">CGU</a> - <a href="/politique-de-confidentialite">Politique de confidentialité</a>
-                        <span class="footer_leftText">Horaires d'ouverture : 7j/7 et 24h/24 <br/> Réalisation <a href="https://diyar-bayrakli.fr" target="_blank">Diyar Bayrakli</a></span>
+                        <a href="/mentions-legales" title="Mentions Légales">Mentions légales</a> - <a href="/conditions-generales-d-utilisation" title="CGU">CGU</a> - <a href="/politique-de-confidentialite" title="Politique de confidentialité">Politique de confidentialité</a>
+                        <span class="footer_leftText">Horaires d'ouverture : 7j/7 et 24h/24 <br/> Réalisation <a href="https://diyar-bayrakli.fr" title="Diyar Bayrakli" target="_blank">Diyar Bayrakli</a></span>
                     </p>
                 </div>
             </div>

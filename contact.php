@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12">
                                     <div class="inner-holder">
-                                        <button class="btn-submit" id="frm_submit_btn" name="contact_form" value="envoyer" type="submit">Envoyer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                                        <button class="btn-submit" id="frm_submit_btn" name="contact_form" value="envoyer" type="submit" role="button">Envoyer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -54,13 +54,13 @@
                         <div class="add-info">
                             <span class="icon-phone icomoon"></span>
                             <p>
-                                <a href="tel:0659742684">06.59.74.26.84</a>
+                                <a href="tel:0659742684" title="Contact téléphone">06.59.74.26.84</a>
                             </p>
                         </div>
                         <div class="add-info">
                             <span class="icon-mail-envelope-open icomoon"></span>
                             <p>
-                                <a href="mailto:contact@toprak-transport.fr">
+                                <a href="mailto:contact@toprak-transport.fr" title="Contact email">
                                     contact@toprak-transport.fr
                                 </a>
                             </p>
@@ -70,7 +70,7 @@
             </div>
         </div>
     </section>
-    <script>
+    <script defer>
         $(document).ready(function () {
             grecaptcha.ready(function () {
                 grecaptcha.execute('<?= $captcha_public_v3 ?>', {action: 'contact'}).then(function (token) {

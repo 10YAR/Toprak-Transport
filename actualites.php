@@ -19,8 +19,8 @@
                 <div class="col-md-2 col-sm-2 hidden-xs"></div>
                 <div class="col-md-8 col-sm-8">
                     <article class="postcard light <?= $pickedColor ?>" style="flex-direction: column">
-                        <a class="postcard__img_link">
-                            <img class="postcard__img" src="<?= $actu['image'] ?>" alt="<?= $actu['title'] ?> Image"/>
+                        <a class="postcard__img_link" title="<?= $actu['title'] ?>">
+                            <img class="postcard__img" src="<?= $actu['image'] ?>" alt="<?= $actu['title'] ?> Image" loading="lazy"/>
                         </a>
                         <div class="postcard__text t-dark">
                             <h1 class="postcard__title <?= $pickedColor ?>"><a><?= $actu['title'] ?></a></h1>
@@ -35,7 +35,7 @@
                             </div>
                             <ul class="postcard__tagbox" style="justify-content: end;">
                                 <li class="tag__item play">
-                                    <a href="/actualites"><i class="fas fa-arrow-left mr-2"></i> Retour</a>
+                                    <a href="/actualites" title="Retour actualités"><i class="fas fa-arrow-left mr-2"></i> Retour</a>
                                 </li>
                             </ul>
                         </div>
@@ -132,8 +132,8 @@
                         }
                         ?>
                         <article class="postcard light <?= $pickedColor ?>">
-                            <a class="postcard__img_link" href="/actualite/<?= $acturl ?>">
-                                <img class="postcard__img" src="<?= $actu['image'] ?>" alt="<?= $actu['title'] ?> Image"/>
+                            <a class="postcard__img_link" href="/actualite/<?= $acturl ?>" title="Couverture <?= $actu['title'] ?>">
+                                <img class="postcard__img" src="<?= $actu['image'] ?>" alt="<?= $actu['title'] ?> Image" loading="lazy"/>
                             </a>
                             <div class="postcard__text t-dark">
                                 <h1 class="postcard__title <?= $pickedColor ?>"><a href="/actualite/<?= $acturl ?>"><?= $actu['title'] ?></a></h1>
@@ -148,7 +148,7 @@
                                 </div>
                                 <ul class="postcard__tagbox">
                                     <li class="tag__item play <?= $pickedColor ?>">
-                                        <a href="/actualite/<?= $acturl ?>" rel="dofollow"><i class="fas fa-play mr-2"></i> Lire l'article</a>
+                                        <a href="/actualite/<?= $acturl ?>" rel="dofollow" title="<?= $actu['title'] ?>"><i class="fas fa-play mr-2"></i> Lire l'article</a>
                                     </li>
                                 </ul>
                             </div>
