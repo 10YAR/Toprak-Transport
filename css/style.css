@@ -2208,7 +2208,9 @@ a:focus {
 	padding:45px 65px;
 	float:left;
 }
-.tab-content .trip-frm2 h4{
+.tab-content .trip-frm2 h4,
+.tab-content .trip-frm2 h3
+{
 	font-family: 'Montserrat',sans-serif;
     line-height:22px;
 	font-size:18px;
@@ -4120,6 +4122,7 @@ a:focus {
 	float:left;
 	padding:45px 50px;
 }
+
 .booking-frm .field-holder{
 	position:relative;
 }

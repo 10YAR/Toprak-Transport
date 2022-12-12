@@ -46,7 +46,7 @@
 									<!--Banner Form 2 Content Start-->
 									<form method="POST" class="trip-frm2 booking-frm" action="/reservation">
 										<div class="col-md-12 col-sm-12">
-											<h4>Départ</h4>
+											<h3>Départ</h3>
 											<div class="field-box">
 												<span class="fas fa-search"></span>
 												<input id="autocomplete_depart" type="text" placeholder="Entrez une adresse" required />
@@ -55,7 +55,7 @@
 											</div>
 										</div>
 										<div class="col-md-12 col-sm-12">
-											<h4>Arrivée</h4>
+											<h3>Arrivée</h3>
 											<div class="field-box">
 												<span class="fas fa-search"></span>
 												<input id="autocomplete_arrivee" type="text" placeholder="Entrez une adresse" required />
@@ -64,14 +64,14 @@
 											</div>
 										</div>
                                         <div class="col-md-6 col-sm-6">
-                                            <h4>Quand ?</h4>
+                                            <h3>Quand ?</h3>
                                             <div class="field-box booking-frm">
                                                 <span class="fas fa-calendar-alt trip_icons_nomobile"></span>
                                                 <input id="flatpickr_date" class="flatpickr-input active" type="text" name="trip_date" placeholder="Sélectionner la date.." style="-webkit-appearance: none;" readonly required />
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
-                                            <h4>À quelle heure ?</h4>
+                                            <h3>À quelle heure ?</h3>
                                             <div class="field-box booking-frm">
                                                 <span class="far fa-clock trip_icons_nomobile"></span>
                                                 <input id="flatpickr_time" class="flatpickr-input active" type="text" name="trip_time" placeholder="Selectionnez l'heure.." style="-webkit-appearance: none;" readonly required />
