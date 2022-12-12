@@ -36,10 +36,10 @@
 <!--<script src="../js/map.js" defer></script>-->
 <script src="../js/moment.js" defer></script>
 <script src="../js/flatpickr.js" defer></script>
-<script src="https://npmcdn.com/flatpickr@4.6.9/dist/l10n/fr.js" defer></script>
+<script rel="dns-prefetch" src="https://npmcdn.com/flatpickr@4.6.9/dist/l10n/fr.js" defer></script>
 <script src="../js/reservation.js" defer></script>
 <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=<?= getenv('GOOGLE_CLOUD_API_KEY') ?>&callback=initializeMap" defer></script>-->
-<script src="https://www.google.com/recaptcha/api.js?render=<?= getenv('CAPTCHA_PUBLIC_V3') ?>" defer></script>
+<script rel="dns-prefetch" src="https://www.google.com/recaptcha/api.js?render=<?= getenv('CAPTCHA_PUBLIC_V3') ?>" defer></script>
 <script src="../js/custom.js" defer></script>
 <!-- Js Files End -->
 </body>

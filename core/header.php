@@ -66,7 +66,7 @@ if (isset($_GET['action']) && $_GET['action'] === "read") {
     <script src="../js/respond.min.js" defer></script>
     <![endif]-->
     <!-- Google tag (gtag.js) -->
-    <script rel=dns-prefetch src="https://www.googletagmanager.com/gtag/js?id=AW-11032844317" defer></script>
+    <script rel="dns-prefetch" src="https://www.googletagmanager.com/gtag/js?id=AW-11032844317" defer></script>
     <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
