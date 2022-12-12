@@ -33,7 +33,7 @@
 						<div class="col-md-12 col-sm-12">
 							<!--Banner Form 2 Nav Start-->
 							<div class="tj-form2-tabs">
-								<ul class="nav nav-tabs">
+								<ul class="nav nav-tabs" role="menu">
 									<li class="active"><a href="#one-way" style="font-weight:bold;" data-toggle="tab" role="tab" title="Aller simple" onclick="changeType(false)">Aller simple</a></li>
 									<li><a href="#two-way" style="font-weight:bold;" data-toggle="tab" role="tab" title="Aller retour" onclick="changeType(true)">Aller-retour</a></li>
 								</ul>
@@ -44,7 +44,7 @@
 								<!--Banner Form 2 Tab One Way Section Start-->
 								<div class="tab-pane active" id="one-way">
 									<!--Banner Form 2 Content Start-->
-									<form method="POST" class="trip-frm2 booking-frm" action="/reservation">
+									<form method="POST" class="trip-frm2 booking-frm" role="form" action="/reservation">
 										<div class="col-md-12 col-sm-12">
 											<h3>Départ</h3>
 											<div class="field-box">
@@ -88,7 +88,7 @@
                                             <span id="mark_duration" role="durée trajet"></span>
 										</div>
 										<div class="col-md-3 col-sm-3">
-											<button type="submit" role="Confirmer la réservation" class="search-btn hover-button" id="trip_continue_button" disabled="disabled">Continuer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+											<button type="submit" role="button" class="search-btn hover-button" id="trip_continue_button" disabled="disabled">Continuer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
 										</div>
 									</form>
 									<!--Banner Form 2 Content End-->
