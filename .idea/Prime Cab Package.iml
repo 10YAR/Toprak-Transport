@@ -16,5 +16,6 @@
     <orderEntry type="library" name="platform" level="application" />
     <orderEntry type="library" name="api" level="application" />
     <orderEntry type="library" name="fr" level="application" />
+    <orderEntry type="library" name="ckeditor" level="application" />
   </component>
 </module>

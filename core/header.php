@@ -36,7 +36,7 @@ if (isset($_GET['action']) && $_GET['action'] === "read") {
 
     <link href="../css/bootstrap.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/style.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link href="../css/fontawesome-all.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="../css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/color.css" id="switcher" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/owl.carousel.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/animate.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -45,7 +45,7 @@ if (isset($_GET['action']) && $_GET['action'] === "read") {
     <link href="../css/flatpickr.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <?php if (basename($_SERVER["SCRIPT_FILENAME"]) === "actualites.php") { ?>
     <link href="../css/actus.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
+    <script src="../js/ckeditor.js" defer></script>
     <?php } ?>
 
     <noscript>
@@ -62,12 +62,12 @@ if (isset($_GET['action']) && $_GET['action'] === "read") {
 
     <script src="../js/jquery-1.12.5.min.js"></script>
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" defer></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" defer></script>
+    <script src="../js/html5shiv.min.js" defer></script>
+    <script src="../js/respond.min.js" defer></script>
     <![endif]-->
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11032844317"></script>
-    <script>
+    <script rel=dns-prefetch src="https://www.googletagmanager.com/gtag/js?id=AW-11032844317" defer></script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -75,7 +75,7 @@ if (isset($_GET['action']) && $_GET['action'] === "read") {
         gtag('config', 'AW-11032844317');
     </script>
 
-    <script type="application/ld+json">
+    <script type="application/ld+json" defer>
 	{
 		"@context": "https://schema.org",
 		"@type": "Organization",

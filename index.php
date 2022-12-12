@@ -296,11 +296,11 @@
 			
 			<section class="tj-form-map" style="padding-top:30px;">
 				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 no-padr">
+					<div class="row" style="display: flex;justify-content: center;">
+						<!--<div class="col-md-6 col-sm-6 no-padr">
 							<div id="tj-map2" class="tj-map2"></div>
-						</div>
-						<div class="col-md-6 col-sm-6 no-padl">
+						</div>-->
+						<div class="col-md-8 col-sm-8 no-padl">
 							<div class="form-box">
 								<div class="form_desc">
 									<h3>Besoin de nous contacter ?</h3>

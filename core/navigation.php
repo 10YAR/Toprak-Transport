@@ -7,7 +7,7 @@
                 <!--Logo Start-->
                 <div class="tj-logo">
                     <a href="/">
-                        <img src="/images/custom/logo.webp" alt="Logo Toprak Transport" style="height:91px;" />
+                        <img src="/images/custom/logo.webp" alt="Logo Toprak Transport" height="91" style="height:91px;" />
                     </a>
                 </div>
                 <!--Logo End-->
