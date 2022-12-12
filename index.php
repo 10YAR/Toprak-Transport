@@ -34,8 +34,8 @@
 							<!--Banner Form 2 Nav Start-->
 							<div class="tj-form2-tabs">
 								<ul class="nav nav-tabs" role="menu">
-									<li class="active"><a href="#one-way" style="font-weight:bold;" data-toggle="tab" role="tab" title="Aller simple" onclick="changeType(false)">Aller simple</a></li>
-									<li><a href="#two-way" style="font-weight:bold;" data-toggle="tab" role="tab" title="Aller retour" onclick="changeType(true)">Aller-retour</a></li>
+									<li class="active"><a href="#one-way" style="font-weight:bold;" data-toggle="tab" role="menuitem" title="Aller simple" onclick="changeType(false)">Aller simple</a></li>
+									<li><a href="#two-way" style="font-weight:bold;" data-toggle="tab" role="menuitem" title="Aller retour" onclick="changeType(true)">Aller-retour</a></li>
 								</ul>
 							</div>
 							<!--Banner Form 2 Nav End-->
