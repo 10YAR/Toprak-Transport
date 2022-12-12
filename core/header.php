@@ -36,7 +36,7 @@ if (isset($_GET['action']) && $_GET['action'] === "read") {
 
     <link href="../css/bootstrap.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/style.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link href="../css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="../css/fontawesome-all.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/color.css" id="switcher" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/owl.carousel.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="../css/animate.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
