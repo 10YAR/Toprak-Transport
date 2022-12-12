@@ -61,6 +61,10 @@ h1,h2,h3,h4,h5,h6{
 	font-weight:600;
 }
 
+a {
+	color: #47aaff;
+}
+
 a:hover,
 a:focus {
 	color: #dd3751;

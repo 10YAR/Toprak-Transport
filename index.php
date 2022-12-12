@@ -13,7 +13,7 @@
 									<h2>Votre Taxi en Seine-et-Marne</h2>
 									<!--Header Banner Button Content Start-->		
 									<div class="banner-btns">
-										<a href="#book" class="btn-style-1" title="Réserver">Réserver &nbsp; <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+										<a href="#book" class="btn-style-1" title="Réserver" style="font-weight:bold;">Réserver &nbsp; <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
 									</div>
 									<!--Header Banner Button Content End-->		
 								</div>
@@ -34,8 +34,8 @@
 							<!--Banner Form 2 Nav Start-->
 							<div class="tj-form2-tabs">
 								<ul class="nav nav-tabs">
-									<li class="active"><a href="#one-way" data-toggle="tab" role="Aller simple" title="Aller simple" onclick="changeType(false)">Aller simple</a></li>
-									<li><a href="#two-way" data-toggle="tab" role="Aller retour" title="Aller retour" onclick="changeType(true)">Aller-retour</a></li>
+									<li class="active"><a href="#one-way" style="font-weight:bold;" data-toggle="tab" role="tab" title="Aller simple" onclick="changeType(false)">Aller simple</a></li>
+									<li><a href="#two-way" style="font-weight:bold;" data-toggle="tab" role="tab" title="Aller retour" onclick="changeType(true)">Aller-retour</a></li>
 								</ul>
 							</div>
 							<!--Banner Form 2 Nav End-->
@@ -123,7 +123,7 @@
 								<div class="service-caption">
 									<h3>Réservation</h3>
 									<p>Réservez votre trajet sur le site</p>
-									<a href="#book" title="Réservation">Réserver <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+									<a href="#book" title="Réservation" style="font-weight:bold;">Réserver <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
 								</div>
 							</div>
 						</div>
@@ -138,7 +138,7 @@
 								<div class="service-caption">
 									<h3>Confirmation</h3>
 									<p>Nous vous recontactons par téléphone pour confirmer votre réservation</p>
-									<a href="#book" title="Réservation">Réserver <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+									<a href="#book" title="Réservation" style="font-weight:bold;">Réserver <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
 								</div>
 							</div>
 						</div>
@@ -153,7 +153,7 @@
 								<div class="service-caption">
 									<h3>Profitez du Voyage</h3>
 									<p>Vous profitez de votre voyage en toute sérénité</p>
-									<a href="#book" title="Réservation">Réserver <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+									<a href="#book" title="Réservation" style="font-weight:bold;">Réserver <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
 								</div>
 							</div>
 						</div>
@@ -231,7 +231,7 @@
 								</ul>
 								<div class="app-links">
                                     <div class="book_btn">
-                                        <a href="#book" title="Réservation" role="link">Réserver <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                                        <a href="#book" title="Réservation" role="link" style="font-weight:bold;">Réserver <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                                     </div>
 								</div>
 							</div>
@@ -324,7 +324,7 @@
 										<textarea name="message" id="send_msg" placeholder="Message" required></textarea>
                                         <input type="hidden" name="recaptcha_response" class="recaptchaResponse">
 									</div>
-									<button type="submit" id="sumbit_btn" name="contact_form" value="envoyer" role="button" class="submit-btn" style="margin-top:0;">Envoyer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+									<button type="submit" id="sumbit_btn" name="contact_form" value="envoyer" role="button" class="submit-btn" style="font-weight:bold;margin-top:0;">Envoyer <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
 								</form>
 							</div>
 						</div>

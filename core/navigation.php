@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-3 col-xs-12 col-sm-4 no-display-mobile">
                 <div class="info_box">
-                    <a href="mailto:contact@toprak-transport.fr" style="text-decoration:none;">
+                    <a href="mailto:contact@toprak-transport.fr" title="Contact email" style="text-decoration:none;">
                     <i class="fa fa-envelope"></i>
                     <div class="info_text">
                         <span class="info_title">Nous contacter</span>
@@ -87,7 +87,7 @@
                     </nav>
                     <!--Menu Holder End-->
                     <div class="book_btn hover-button">
-                        <a href="<?= $FILE == '/index.php' ? '#book' : '/#book' ?>" title="Réservation">Réservation <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        <a href="<?= $FILE == '/index.php' ? '#book' : '/#book' ?>" title="Réservation" style="font-weight:bold;">Réservation <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                 </div><!--Nav Holder End-->
             </div>
