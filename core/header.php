@@ -1,7 +1,7 @@
 <?php
 require_once "core/functions.php";
 
-$titlePages = ["index.php" => "Toprak Transport : Service de Taxi à Fontainebleau et Montereau", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter", "confidentialite.php" => "Politique de confidentialité", "cgu.php" => "Conditions générales d'utilisation", "mentions-legales.php" => "Mentions légales", "actualites.php" => "Actualités taxi et chauffeurs"];
+$titlePages = ["index.php" => "Toprak Transport - VTC / Taxi à Montereau et Fontainebleau", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter", "confidentialite.php" => "Politique de confidentialité", "cgu.php" => "Conditions générales d'utilisation", "mentions-legales.php" => "Mentions légales", "actualites.php" => "Actualités taxi et chauffeurs"];
 
 if (isset($_GET['action']) && $_GET['action'] === "read") {
     $id = explode("-", $_GET['id'])[0];
