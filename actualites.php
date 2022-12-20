@@ -26,7 +26,7 @@
                             <h1 class="postcard__title <?= $pickedColor ?>"><a><?= $actu['title'] ?></a></h1>
                             <div class="postcard__subtitle small">
                                 <time datetime="<?= $actu['created_at'] ?>">
-                                    <i class="fas fa-calendar-alt mr-2"></i> Ecrit le <?= $date ?>
+                                    <i class="fas fa-calendar-alt mr-2"></i> Écrit le <?= $date ?>
                                 </time>
                             </div>
                             <div class="postcard__bar"></div>

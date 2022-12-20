@@ -71,6 +71,7 @@ a, a:hover {
 }
 .postcard .postcard__title {
     font-size: 1.75rem;
+    margin-top: 0;
 }
 .postcard .postcard__img {
     max-height: 180px;
@@ -100,6 +101,7 @@ a, a:hover {
     text-overflow: ellipsis;
     text-align: justify;
     height: 100%;
+    font-size: 1.5rem;
 }
 .postcard .postcard__tagbox {
     display: flex;
@@ -111,11 +113,12 @@ a, a:hover {
 }
 .postcard .postcard__tagbox .tag__item {
     display: inline-block;
-    background: rgba(83, 83, 83, 0.4);
+    background-color: #1C2B39;
+    color: #fff;
     border-radius: 3px;
     padding: 2.5px 10px;
     margin: 0 5px 5px 0;
-    cursor: default;
+    cursor: pointer;
     user-select: none;
     transition: background-color 0.3s;
 }
