@@ -89,7 +89,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     }
 
     // Définition des tranches de prix supplémentaires
-    $tranches = array("O" => 5, "A" => 15, "B" => 15, "C" => 30, "D" => 40, "E" => 50, "F" => 80);
+    $tranches = array("O" => 5, "A" => 15, "B" => 15, "C" => 30, "D" => 40, "E" => 50, "F" => 70);
 
     // Si réservation de nuit... prix plus cher!
     if ($pick_hour > 23 OR $pick_hour < 7)
@@ -126,8 +126,6 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         $price += (($price / 6) * 1.7);
     }elseif ($value_distance_from_home > 40000) {
         $price += (($price / 7) * 1.8);
-    }elseif ($value_distance_from_home > 45000) {
-        $price += (($price / 8) * 2.0);
     }
 
     $duration_text = str_replace([" hour", " mins"], ["h", "min"], $duration_text);
