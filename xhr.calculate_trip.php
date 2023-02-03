@@ -47,7 +47,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     $duration = $timestamp1 + $distance->routes[0]->legs[0]->duration->value;
     $duration_text = $distance->routes[0]->legs[0]->duration->text;
 
-    if ($value_distance < 5000) {
+    /*if ($value_distance < 5000) {
         $price = 10;
         $tranche = "O";
     }elseif ($value_distance > 5000 AND $value_distance < 10000) {
@@ -91,10 +91,6 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     // Définition des tranches de prix supplémentaires
     $tranches = array("O" => 5, "A" => 15, "B" => 15, "C" => 30, "D" => 40, "E" => 50, "F" => 80);
 
-    // Si réservation de nuit... prix plus cher!
-    if ($pick_hour > 23 OR $pick_hour < 7)
-        $price = ($price + $tranches[$tranche]);
-
     // Diff heures
     $date1 = date_create("now");
     $date2 = date_create($formatted_date);
@@ -108,15 +104,6 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     }
     // on décale pour que ce soit toujours appliqué
     $price += $tranches[$tranche];
-    
-
-    // Si c'est un trajet aller retour...
-    if ($allerretour == "true") {
-        $price_double = ($price * 2);
-        $price = $price_double - (($price_double / 100) * 10);
-        $dist_only = str_replace(" km", "", $text_distance);
-        $text_distance = ($dist_only*2)+3 . " km";
-    }
 
     if ($value_distance_from_home > 20000) {
         $price += (($price / 3) * 1.5);
@@ -126,6 +113,29 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         $price += (($price / 3) * 3);
     }elseif ($value_distance_from_home > 40000) {
         $price += (($price / 3) * 6);
+    }
+    */
+
+    $km_price = 1.9;
+
+    // Si réservation de nuit... prix plus cher!
+    $pick_time_frm = (float) ($pick_hour . "." . $pick_time);
+    if ($pick_time_frm >= 22.0 || $pick_time_frm <= 7.0) $km_price = 2.5;
+
+    $kms = $value_distance / 1000;
+    $kms_from_home = $value_distance_from_home / 1000;
+
+    $price = ceil($kms * $km_price);
+    $price += ceil($kms_from_home * $km_price) / 2;
+
+    // Si c'est un trajet aller retour...
+    if ($allerretour == "true") {
+        $price *= 2;
+        $dist_only = str_replace(" km", "", $text_distance);
+        $text_distance = ($dist_only*2)+3 . " km";
+        $duration_text .= " (x2)";
+    }else {
+        if ($value_distance < 20000) $price += 5;
     }
 
     $duration_text = str_replace([" hour", " mins"], ["h", "min"], $duration_text);
