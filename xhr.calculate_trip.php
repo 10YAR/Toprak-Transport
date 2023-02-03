@@ -128,7 +128,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     }elseif ($value_distance_from_home > 40000) {
         $price += (($price / 3) * 3.0);
     }elseif ($value_distance_from_home > 45000) {
-        $price += (($price / 3) * 6.0);
+        $price += (($price / 3) * 4.0);
     }
 
     $duration_text = str_replace([" hour", " mins"], ["h", "min"], $duration_text);
