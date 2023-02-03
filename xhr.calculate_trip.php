@@ -107,8 +107,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
 
     }
     // on décale pour que ce soit toujours appliqué
-    
-        $price += $tranches[$tranche];
+    $price += $tranches[$tranche];
     
 
     // Si c'est un trajet aller retour...
@@ -122,13 +121,13 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     if ($value_distance_from_home > 20000) {
         $price += (($price / 3) * 1.5);
     }elseif ($value_distance_from_home > 30000) {
-        $price += (($price / 3) * 1.5);
+        $price += (($price / 5) * 1.5);
     }elseif ($value_distance_from_home > 35000) {
-        $price += (($price / 3) * 1.7);
+        $price += (($price / 6) * 1.7);
     }elseif ($value_distance_from_home > 40000) {
-        $price += (($price / 3) * 1.8);
+        $price += (($price / 7) * 1.8);
     }elseif ($value_distance_from_home > 45000) {
-        $price += (($price / 3) * 2.0);
+        $price += (($price / 8) * 2.0);
     }
 
     $duration_text = str_replace([" hour", " mins"], ["h", "min"], $duration_text);
