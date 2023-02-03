@@ -104,10 +104,9 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
 
     }
     // on décale pour que ce soit toujours appliqué
-    if ($price < 50)
+    
         $price += $tranches[$tranche];
-    else
-        $price += ($price / 10) * 2.2;
+    
 
     // Si c'est un trajet aller retour...
     if ($allerretour == "true") {
