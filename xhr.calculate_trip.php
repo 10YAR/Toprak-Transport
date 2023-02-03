@@ -119,7 +119,9 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
         $text_distance = ($dist_only*2)+3 . " km";
     }
 
-    if ($value_distance_from_home > 30000) {
+    if ($value_distance_from_home > 20000) {
+        $price += (($price / 3) * 1.5);
+    }elseif ($value_distance_from_home > 30000) {
         $price += (($price / 3) * 2);
     }elseif ($value_distance_from_home > 35000) {
         $price += (($price / 3) * 2.5);
