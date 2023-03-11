@@ -38,7 +38,7 @@
                         <a href="tel:0659742684" title="Contact Téléphone"> <i class="fas fa-phone-volume"></i> </a>
                     </div>
                     <div class="phone_text">
-                        <span><a href="tel:0659742684" title="Contact Téléphone">06.59.74.26.84</a></span>
+                        <span><a href="tel:0659742684" title="Contact Téléphone">06 59 74 26 84</a></span>
                     </div>
                 </div>
             </div>

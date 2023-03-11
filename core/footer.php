@@ -6,13 +6,13 @@
                 <ul class="payment-icons">
                     <li><i class="fab fa-cc-visa"></i></li>
                     <li><i class="fab fa-cc-mastercard"></i></li>
-                    <li><i class="fa fa-coins"></i></li>
+                    <li><i class="fas fa-coins"></i></li>
                 </ul>
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="copyright_text">
                     <p>
-                        &copy; Copyright <?= date("Y") ?> Toprak Transport - Taxi en Seine-et-Marne<br />
+                        &copy; Copyright <?= date("Y") ?> Toprak Transport - Taxi Montereau<br />
                         <a href="/mentions-legales" title="Mentions Légales">Mentions légales</a> - <a href="/conditions-generales-d-utilisation" title="CGU">CGU</a> - <a href="/politique-de-confidentialite" title="Politique de confidentialité">Politique de confidentialité</a>
                         <span class="footer_leftText">Horaires d'ouverture : 7j/7 et 24h/24 <br/> Réalisation <a href="https://diyar-bayrakli.fr" title="Diyar Bayrakli" target="_blank">Diyar Bayrakli</a></span>
                     </p>

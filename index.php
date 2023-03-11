@@ -10,7 +10,7 @@
 							<div class="banner-caption">
 								<div class="banner-inner bounceInRight animated delay-2s">
 									<strong>Toprak Transport</strong>
-									<h2>Votre Taxi en Seine-et-Marne</h2>
+									<h2>Votre Taxi Montereau</h2>
 									<!--Header Banner Button Content Start-->		
 									<div class="banner-btns">
 										<a href="#book" class="btn-style-1" title="Réserver" style="font-weight:bold;">Réserver &nbsp; <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
@@ -224,8 +224,9 @@
 								</div>
 
 								<ul class="feature-list">
+
+                                    <li><i class="fa fa-check" aria-hidden="true"></i>Tarif donné à l'avance, pas de surprises !</li>
 									<li><i class="fa fa-check" aria-hidden="true"></i>Réservation rapide et facile</li>
-									<li><i class="fa fa-check" aria-hidden="true"></i>Tarif donné à l'avance, pas de surprises !</li>
 									<li><i class="fa fa-check" aria-hidden="true"></i>Chauffeurs expérimentés et professionnels</li>
 									<li><i class="fa fa-check" aria-hidden="true"></i>Véhicules en parfait état et contrôlés pour votre sécurité</li>
 								</ul>
