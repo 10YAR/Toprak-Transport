@@ -46,7 +46,7 @@
 									<!--Banner Form 2 Content Start-->
 									<form method="POST" class="trip-frm2 booking-frm" role="form" action="/reservation">
 										<div class="col-md-12 col-sm-12">
-											<h3>Départ</h3>
+											<strong class="strong-stat">Départ</strong>
 											<div class="field-box">
 												<span class="fas fa-search"></span>
 												<input id="autocomplete_depart" type="text" placeholder="Entrez une adresse" required />
@@ -55,7 +55,7 @@
 											</div>
 										</div>
 										<div class="col-md-12 col-sm-12">
-											<h3>Arrivée</h3>
+											<strong class="strong-stat">Arrivée</strong>
 											<div class="field-box">
 												<span class="fas fa-search"></span>
 												<input id="autocomplete_arrivee" type="text" placeholder="Entrez une adresse" required />
@@ -64,14 +64,14 @@
 											</div>
 										</div>
                                         <div class="col-md-6 col-sm-6">
-                                            <h3>Quand ?</h3>
+                                            <strong class="strong-stat">Quand ?</strong>
                                             <div class="field-box booking-frm">
                                                 <span class="fas fa-calendar-alt trip_icons_nomobile"></span>
                                                 <input id="flatpickr_date" class="flatpickr-input active" type="text" name="trip_date" placeholder="Sélectionner la date.." style="-webkit-appearance: none;" readonly required />
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
-                                            <h3>À quelle heure ?</h3>
+                                            <strong class="strong-stat">À quelle heure ?</strong>
                                             <div class="field-box booking-frm">
                                                 <span class="far fa-clock trip_icons_nomobile"></span>
                                                 <input id="flatpickr_time" class="flatpickr-input active" type="text" name="trip_time" placeholder="Selectionnez l'heure.." style="-webkit-appearance: none;" readonly required />
@@ -171,7 +171,8 @@
 							<div class="fact-outer">
 								<i class="far fa-smile"></i>
 								<div class="fact-desc">
-									<strong class="fact-num strong-stat">100%</strong>
+									<strong class="fact-num strong-stat">100</strong>
+                                    <strong>%</strong>
 									<span>Satisfactions</span>
 								</div>
 							</div>
@@ -180,7 +181,8 @@
 							<div class="fact-outer">
 								<i class="fas fa-tachometer-alt"></i>
 								<div class="fact-desc">
-                                    <strong class="fact-num strong-stat">1500+</strong>
+                                    <strong class="fact-num strong-stat">1500</strong>
+                                    <strong>+</strong>
 									<span>Trajets</span>
 								</div>
 							</div>
@@ -189,7 +191,8 @@
                             <div class="fact-outer">
                                 <i class="fas fa-briefcase"></i>
                                 <div class="fact-desc">
-                                    <strong class="fact-num strong-stat">8+</strong>
+                                    <strong class="fact-num strong-stat">8</strong>
+                                    <strong>+</strong>
                                     <span>Années d'expérience</span>
                                 </div>
                             </div>
@@ -198,7 +201,8 @@
 							<div class="fact-outer">
 								<i class="far fa-map"></i>
 								<div class="fact-desc">
-                                    <strong class="fact-num strong-stat">500+</strong>
+                                    <strong class="fact-num strong-stat">500</strong>
+                                    <strong>+</strong>
 									<span>Destinations</span>
 								</div>
 							</div>
