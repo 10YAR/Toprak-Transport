@@ -5275,3 +5275,11 @@ ul.cats li a {
 .grecaptcha-badge {
 	visibility: hidden;
 }
+
+.strong-stat {
+	font-size: 30px;
+	line-height: 22px;
+	display: inline-block;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}

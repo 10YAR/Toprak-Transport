@@ -9,7 +9,7 @@
 						<div class="col-md-12 col-sm-12">
 							<div class="banner-caption">
 								<div class="banner-inner bounceInRight animated delay-2s">
-									<strong>Toprak Transport</strong>
+									<h1 style="color:#fff;">Toprak Transport</h1>
 									<h2>Votre Taxi Montereau</h2>
 									<!--Header Banner Button Content Start-->		
 									<div class="banner-btns">
@@ -171,8 +171,7 @@
 							<div class="fact-outer">
 								<i class="far fa-smile"></i>
 								<div class="fact-desc">
-									<h3 class="fact-num">100</h3>
-									<strong>%</strong>
+									<strong class="fact-num strong-stat">100%</strong>
 									<span>Satisfactions</span>
 								</div>
 							</div>
@@ -181,8 +180,7 @@
 							<div class="fact-outer">
 								<i class="fas fa-tachometer-alt"></i>
 								<div class="fact-desc">
-                                    <h3 class="fact-num">1500</h3>
-									<strong>+</strong>
+                                    <strong class="fact-num strong-stat">1500+</strong>
 									<span>Trajets</span>
 								</div>
 							</div>
@@ -191,8 +189,7 @@
                             <div class="fact-outer">
                                 <i class="fas fa-briefcase"></i>
                                 <div class="fact-desc">
-                                    <h3 class="fact-num">8</h3>
-                                    <strong>+</strong>
+                                    <strong class="fact-num strong-stat">8+</strong>
                                     <span>Années d'expérience</span>
                                 </div>
                             </div>
@@ -201,8 +198,7 @@
 							<div class="fact-outer">
 								<i class="far fa-map"></i>
 								<div class="fact-desc">
-                                    <h3 class="fact-num">500</h3>
-                                    <strong>+</strong>
+                                    <strong class="fact-num strong-stat">500+</strong>
 									<span>Destinations</span>
 								</div>
 							</div>
