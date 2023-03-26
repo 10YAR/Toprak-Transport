@@ -126,7 +126,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     $kms_from_home = $value_distance_from_home / 1000;
 
     $price = ceil($kms * $km_price);
-    $price += ceil($kms_from_home * $km_price) / 2;
+    $price += ceil($kms_from_home * $km_price) / 4;
 
     // Si c'est un trajet aller retour...
     if ($allerretour == "true") {
