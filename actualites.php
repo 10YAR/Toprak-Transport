@@ -128,7 +128,7 @@
                         $acturl = $actu['id'] . "-" . sluggify($actu['title']);
                         try {
                             $date = new DateTime($actu['created_at']);
-                            $date = $date->format('d/m/Y à H\hi');
+                            $date = $date->format('d/m/Y');
                         } catch (Exception $e) {
                             $date = "Date inconnue";
                         }
