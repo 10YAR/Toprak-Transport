@@ -92,7 +92,7 @@
                                     <div class="info-field">
                                         <label for="editor">Contenu</label>
                                         <textarea name="content" id="editor"></textarea>
-                                        <script>
+                                        <script type="text/javascript" defer>
                                             ClassicEditor
                                                 .create( document.querySelector( '#editor' ) )
                                                 .then( editor => {
