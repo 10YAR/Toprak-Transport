@@ -5283,3 +5283,8 @@ ul.cats li a {
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
+
+.contactHeader {
+	display: flex;
+	align-items: center;
+}
