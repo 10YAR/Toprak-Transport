@@ -345,7 +345,7 @@
                 });
             });
 
-            $('.paragraphAeroport, .paragraphMultiservice, .paragraphSeineEtMarne').hide();
+            $('.paragraphAeroport, .paragraphMultiservice, .paragraphSeineEtMarne, .paragraphReserver').hide();
         });
     </script>
 <?php require_once "core/footer.php"; ?>
