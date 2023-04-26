@@ -11,8 +11,9 @@ if (isset($_GET['action']) && $_GET['action'] === "read") {
     $titlePage = $titlePages[basename($_SERVER["SCRIPT_FILENAME"])] ?? "Toprak Transport : Service de Taxi à Fontainebleau et Montereau";
 }
 
-
-
+if (isset($_GET['acceptCookies']) && $_GET['acceptCookies'] == 'yes') {
+    setcookie('acceptCookies', 'yes', time() + 365 * 24 * 3600, '/', 'toprak-transport.fr', false, true);
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">

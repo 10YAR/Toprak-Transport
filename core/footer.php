@@ -43,11 +43,7 @@
 <script src="../js/custom.js" defer></script>
 <!-- Js Files End -->
 </body>
-<?php
-if (isset($_GET['acceptCookies']) && $_GET['acceptCookies'] == 'yes') {
-    setcookie('acceptCookies', 'yes', time() + 365 * 24 * 3600, '/', null, false, true);
-} elseif (empty($_COOKIE['acceptCookies'])) {
-?>
+<?php if (empty($_COOKIE['acceptCookies'])) { ?>
 <div class="rgpd">
     <div class="rgpd__content">
         <p class="rgpd__content__text">En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des services et offres adaptés à vos centres d’intérêts. <a href="/politique-de-confidentialite" title="Politique de confidentialité">En savoir plus</a></p>
