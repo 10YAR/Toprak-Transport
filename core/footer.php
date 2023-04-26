@@ -56,7 +56,7 @@ if (isset($_GET['acceptCookies']) && $_GET['acceptCookies'] == 'yes') {
 </div>
 <?php } ?>
 
-<div id="fb-root"></div>
+<div id="fb-root" style="position:relative;z-index:1;"></div>
 <div id="fb-customer-chat" class="fb-customerchat"></div>
 <script type="text/javascript" defer>
     var chatbox = document.getElementById('fb-customer-chat');
