@@ -77,7 +77,7 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<?php if ($_COOKIE['acceptCookies'] === 'yes') { ?>
+<?php if ($_COOKIE['acceptCookies'] === 'yes' || $_GET['acceptCookies'] === 'yes') { ?>
 <!-- Matomo -->
 <script>
     var _paq = window._paq = window._paq || [];
