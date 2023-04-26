@@ -55,7 +55,7 @@
                         <div class="navbar-header">
                             <ul class="nav navbar-nav" style="float:left;">
                                 <li>
-                                    <a href="/#book" title="Réserver un Taxi">Réserver un Taxi</a>
+                                    <a href="/#book" title="Réserver un trajet">Réserver un trajet</a>
                                 </li>
                             </ul>
                             <button type="button" class="navbar-toggle collapsed" style="margin-top:12px;" data-toggle="collapse" data-target="#tj-navbar-collapse" aria-expanded="false">

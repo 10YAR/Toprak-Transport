@@ -10,7 +10,7 @@
 							<div class="banner-caption">
 								<div class="banner-inner bounceInRight animated delay-2s">
 									<h1 style="color:#fff;">Toprak Transport</h1>
-									<h2>Votre Taxi Montereau</h2>
+									<h2>Service de Taxi sur Montereau et Fontainebleau</h2>
 									<!--Header Banner Button Content Start-->		
 									<div class="banner-btns">
 										<a href="#book" class="btn-style-1" title="Réserver" style="font-weight:bold;">Réserver &nbsp; <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>

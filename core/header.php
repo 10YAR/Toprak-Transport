@@ -1,7 +1,7 @@
 <?php
 require_once "core/functions.php";
 
-$titlePages = ["index.php" => "Toprak Transport - VTC / Taxi à Montereau et Fontainebleau", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter", "confidentialite.php" => "Politique de confidentialité", "cgu.php" => "Conditions générales d'utilisation", "mentions-legales.php" => "Mentions légales", "actualites.php" => "Actualités taxi et chauffeurs"];
+$titlePages = ["index.php" => "Toprak Transport - VTC / Service de Taxi à Montereau et Fontainebleau", "services.php" => "Nos services", "aboutus.php" => "Qui sommes nous", "contact.php" =>  "Nous contacter", "confidentialite.php" => "Politique de confidentialité", "cgu.php" => "Conditions générales d'utilisation", "mentions-legales.php" => "Mentions légales", "actualites.php" => "Actualités taxi et chauffeurs"];
 
 if (isset($_GET['action']) && $_GET['action'] === "read") {
     $id = explode("-", $_GET['id'])[0];
@@ -21,7 +21,7 @@ if (isset($_GET['acceptCookies']) && $_GET['acceptCookies'] === 'yes') {
     <meta charset="utf-8">
     <meta name="description" content="<?= $actu['description'] ?? "Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. La référence du taxi en seine-et-marne. Réservez immédiatement en ligne"?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="<?= $actu['keywords'] ?? "fontainebleau, montereau, Taxi, VTC, chauffeur, seine-et-marne, Uber, voyage, réservation, transporteur, aéroport, transport, hopital" ?>">
+    <meta name="keywords" content="<?= $actu['keywords'] ?? "fontainebleau, montereau, Service de Taxi, VTC, chauffeur, seine-et-marne, Uber, voyage, réservation, transporteur, aéroport, transport, hopital" ?>">
     <meta name="referrer" content="always">
     <meta name="robots" content="index, follow">
 
@@ -80,9 +80,9 @@ if (isset($_GET['acceptCookies']) && $_GET['acceptCookies'] === 'yes') {
 	{
 		"@context": "https://schema.org",
 		"@type": "Organization",
-		"name": "Toprak Transport : Taxi à Fontainebleau et Montereau",
+		"name": "Toprak Transport : Service Taxi à Fontainebleau et Montereau",
 		"url": "https://toprak-transport.fr/",
-					"description": "Taxi chauffeur privé VTC, booker dès maintenant une course à Fontainebleau ou Montereau, estimation du prix en ligne et réservation au 0185481930.",
+					"description": "Service de Taxi chauffeur privé VTC, booker dès maintenant une course à Fontainebleau ou Montereau, estimation du prix en ligne et réservation au 0185481930.",
 					"logo": "https://toprak-transport.fr/images/custom/favicon.png",
 		"sameAs": [
 			"https://toprak-transport.fr/",
