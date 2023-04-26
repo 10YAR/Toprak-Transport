@@ -5329,3 +5329,7 @@ ul.cats li a {
 .rgpd_accept_button:hover {
 	color: #fff;
 }
+
+.info_text .info_title {
+	line-height: 45px;
+}
