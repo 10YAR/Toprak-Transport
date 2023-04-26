@@ -191,7 +191,7 @@
                             <div class="fact-outer">
                                 <i class="fas fa-briefcase"></i>
                                 <div class="fact-desc">
-                                    <strong class="fact-num strong-stat">8</strong>
+                                    <strong class="fact-num strong-stat">5</strong>
                                     <strong>+</strong>
                                     <span>Années d'expérience</span>
                                 </div>

@@ -19,7 +19,7 @@ if (isset($_GET['acceptCookies']) && $_GET['acceptCookies'] === 'yes') {
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="<?= $actu['description'] ?? "Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. La référence du taxi en seine-et-marne. Réservez immédiatement en ligne"?>">
+    <meta name="description" content="<?= $actu['description'] ?? "Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 5 ans d'expérience. La référence du taxi en seine-et-marne. Réservez immédiatement en ligne"?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="<?= $actu['keywords'] ?? "fontainebleau, montereau, Service de Taxi, VTC, chauffeur, seine-et-marne, Uber, voyage, réservation, transporteur, aéroport, transport, hopital" ?>">
     <meta name="referrer" content="always">
@@ -98,10 +98,10 @@ if (isset($_GET['acceptCookies']) && $_GET['acceptCookies'] === 'yes') {
     <meta property="og:locale" content="fr_FR">
     <meta property="og:url" content="https://toprak-transport.fr/<?= basename($_SERVER["SCRIPT_FILENAME"]) ?>">
     <meta property="og:title" content="<?= $titlePage ?>">
-    <meta property="og:description" content="<?= $actu['description'] ?? "Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. Contactez-nous au 06.59.74.26.84 ou réservez votre trajet en ligne"?>">
+    <meta property="og:description" content="<?= $actu['description'] ?? "Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 5 ans d'expérience. Contactez-nous au 06.59.74.26.84 ou réservez votre trajet en ligne"?>">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description" content="<?= $actu['description'] ?? "Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 15 ans d'expérience. Contactez-nous au 06.59.74.26.84 ou réservez votre trajet en ligne"?>">
+    <meta name="twitter:description" content="<?= $actu['description'] ?? "Voyagez en toute sérénité avec nos chauffeurs privés ayant plus de 5 ans d'expérience. Contactez-nous au 06.59.74.26.84 ou réservez votre trajet en ligne"?>">
     <meta name="twitter:title" content="<?= $titlePage ?>">
     <meta name="twitter:image" content="https://toprak-transport.fr/images/custom/photo_banner.webp">
 
