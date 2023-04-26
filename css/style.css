@@ -5331,5 +5331,5 @@ ul.cats li a {
 }
 
 .info_text .info_title {
-	line-height: 45px;
+	line-height: 45px !important;
 }
