@@ -15,7 +15,7 @@
             <div class="col-md-3 col-xs-12 col-sm-4 no-display-mobile" style="visibility: hidden;">
                 <div class="info_box">
                     <i class="fa fa-home"></i>
-                    <div class="info_text">
+                    <div class="info_text" style="display: none;">
                         <span class="info_title">Adresse</span>
                         <span>Montereau-Fault-Yonne</span>
                     </div>
