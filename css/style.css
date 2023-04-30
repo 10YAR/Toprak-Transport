@@ -5298,18 +5298,19 @@ ul.cats li a {
 	bottom: 0;
 	width: 100%;
 	color: #fff;
-	font-size: 14px;
+	font-size: 12px;
 	z-index: 1000;
 }
 
 .rgpd__content {
-	padding: 15px 10px;
+	padding: 5px 0px 0px 0px;
 	display: flex;
 	width: 80%;
 }
 
 .rgpd__content__text {
 	display: inline-block;
+	margin: 0;
 	margin-right: 10px;
 }
 
