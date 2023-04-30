@@ -5299,7 +5299,7 @@ ul.cats li a {
 	width: 100%;
 	color: #fff;
 	font-size: 19px;
-	z-index: 2;
+	z-index: 1000;
 }
 
 .rgpd__content {
