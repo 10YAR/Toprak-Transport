@@ -70,6 +70,7 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     }
 
     if ($value_distance > 90000) $price += 15;
+    if ($price < 20) $price = 20;
 
     $duration_text = str_replace([" hour", " mins"], ["h", "min"], $duration_text);
     return (["price" => (ceil(round($price)/10) * 10) - 5, "distance" => $text_distance, "duration" => $duration, "text_duration" => $duration_text]);
