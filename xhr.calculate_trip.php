@@ -47,80 +47,11 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     $duration = $timestamp1 + $distance->routes[0]->legs[0]->duration->value;
     $duration_text = $distance->routes[0]->legs[0]->duration->text;
 
-    /*if ($value_distance < 5000) {
-        $price = 10;
-        $tranche = "O";
-    }elseif ($value_distance > 5000 AND $value_distance < 10000) {
-        $price = 10;
-        $tranche = "A";
-    }elseif ($value_distance > 10000 AND $value_distance < 15000) {
-        $price = 20;
-        $tranche = "A";
-    }elseif ($value_distance > 15000 AND $value_distance < 20000) {
-        $price = 25;
-        $tranche = "B";
-    }elseif ($value_distance > 20000 AND $value_distance < 30000) {
-        $price = 30;
-        $tranche = "B";
-    }elseif ($value_distance > 30000 AND $value_distance < 40000) {
-        $price = 50;
-        $tranche = "B";
-    }elseif ($value_distance > 40000 AND $value_distance < 50000) {
-        $price = 60;
-        $tranche = "C";
-    }elseif ($value_distance > 50000 AND $value_distance < 60000) {
-        $price = 70;
-        $tranche = "C";
-    }elseif ($value_distance > 60000 AND $value_distance < 70000) {
-        $price = 80;
-        $tranche = "C";
-    }elseif ($value_distance > 70000 AND $value_distance < 80000) {
-        $price = 90;
-        $tranche = "D";
-    }elseif ($value_distance > 80000 AND $value_distance < 90000) {
-        $price = 100;
-        $tranche = "E";
-    }elseif ($value_distance > 90000 AND $value_distance < 95000) {
-        $price = 115;
-        $tranche = "E";    
-    }else {
-        $price = ceil((($value_distance / 10000) * 12) / 10) * 10;
-        $tranche = "F";
-    }
-
-    // Définition des tranches de prix supplémentaires
-    $tranches = array("O" => 5, "A" => 15, "B" => 15, "C" => 30, "D" => 40, "E" => 50, "F" => 80);
-
-    // Diff heures
-    $date1 = date_create("now");
-    $date2 = date_create($formatted_date);
-    $hours_diff = date_diff($date1, $date2);
-    $hours_diff_calc = $hours_diff->h;
-    $hours_diff_calc += ($hours_diff->days * 24);
-
-    // Si réservation immédiate (-8heures), tarif + cher
-    if ($hours_diff_calc < 2) {
-
-    }
-    // on décale pour que ce soit toujours appliqué
-    $price += $tranches[$tranche];
-
-    if ($value_distance_from_home > 20000) {
-        $price += (($price / 3) * 1.5);
-    }elseif ($value_distance_from_home > 30000) {
-        $price += (($price / 3) * 2);
-    }elseif ($value_distance_from_home > 35000) {
-        $price += (($price / 3) * 3);
-    }elseif ($value_distance_from_home > 40000) {
-        $price += (($price / 3) * 6);
-    }
-    */
-
-    $km_price = 1.9;
+    $km_price = 1.6;
 
     // Si réservation de nuit... prix plus cher!
     $pick_time_frm = (float) ($pick_hour . "." . $pick_time);
-    if ($pick_time_frm >= 22.0 || $pick_time_frm <= 7.0) $km_price = 2.5;
+    if ($pick_time_frm >= 22.0 || $pick_time_frm <= 7.0) $km_price = 2;
 
     $kms = $value_distance / 1000;
     $kms_from_home = $value_distance_from_home / 1000;
@@ -137,6 +68,8 @@ function calculatePrice($depart, $arrivee, $pick_date, $pick_time, $allerretour)
     }else {
         if ($value_distance < 20000) $price += 5;
     }
+
+    if ($value_distance > 90000) $price += 15;
 
     $duration_text = str_replace([" hour", " mins"], ["h", "min"], $duration_text);
     return (["price" => (ceil(round($price)/10) * 10) - 5, "distance" => $text_distance, "duration" => $duration, "text_duration" => $duration_text]);
