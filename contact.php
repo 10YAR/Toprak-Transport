@@ -60,8 +60,8 @@
                         <div class="add-info">
                             <span class="icon-mail-envelope-open icomoon"></span>
                             <p>
-                                <a href="mailto:contact@toprak-transport.fr" title="Contact email">
-                                    contact@toprak-transport.fr
+                                <a href="mailto:bulentbayrakli75@gmail.com" title="Contact email">
+                                    bulentbayrakli75@gmail.com
                                 </a>
                             </p>
                         </div>
