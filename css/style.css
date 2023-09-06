@@ -5309,7 +5309,8 @@ ul.cats li a {
 }
 
 .rgpd__content__text {
-	display: inline-block;
+	display: flex;
+	align-items: center;
 	margin: 0;
 	margin-right: 10px;
 }

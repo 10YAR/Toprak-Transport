@@ -42,7 +42,7 @@
                         </p></div>
                     <div>
                         <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;color:#000000;text-align:Left;"><span style="font-style:normal;font-weight:bold;text-decoration:underline;">Contact</span><br><br>Veuillez communiquer avec nous si vous avez des questions ou des préoccupations. Nos
-                            coordonnées sont les suivantes :<br><br>06 59 74 26 84<br><br>contact@toprak-transport.fr<br><br>1 rue d'Otley, 77130, Montereau-Fault-Yonne
+                            coordonnées sont les suivantes :<br><br>06 59 74 26 84<br><br>bulentbayrakli75@gmail.com<br><br>1 rue d'Otley, 77130, Montereau-Fault-Yonne
                         </p></div>
                     <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;color:#000000;text-align:Right;"><span style="font-style:italic;font-weight:normal;">Date d'entrée en vigueur : </span>le 8 juillet 2022.
                     </p>

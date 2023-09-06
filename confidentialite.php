@@ -177,7 +177,7 @@
             <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;color:#000000;text-align:Left;"><span style="font-style:normal;font-weight:bold;text-decoration:underline;">Comment modifier, supprimer ou contester les données recueillies</span><br><br>Si vous souhaitez que vos renseignements soient
                 supprimés ou modifiés d’une façon ou d’une autre, veuillez communiquer avec notre agent de protection de la vie privée ici :
             </p>
-            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;color:#000000;text-align:Left;margin-left:20.0pt;">Bulent BAYRAKLI<br>1 rue d'Otley<br>contact@toprak-transport.fr<br>06 59 74 26 84
+            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;color:#000000;text-align:Left;margin-left:20.0pt;">Bulent BAYRAKLI<br>1 rue d'Otley<br>bulentbayrakli75@gmail.com<br>06 59 74 26 84
             </p>
             <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;color:#000000;text-align:Left;"><span style="font-style:normal;font-weight:bold;text-decoration:underline;">Modifications</span>
             </p>
@@ -186,7 +186,7 @@
             </p>
             <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;color:#000000;text-align:Left;"><span style="font-style:normal;font-weight:bold;text-decoration:underline;">Contact</span>
             </p>
-            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;color:#000000;text-align:Left;">Si vous avez des questions à nous poser, n’hésitez pas à communiquer avec nous en utilisant ce qui suit&nbsp;:<br>06 59 74 26 84<br>contact@toprak-transport.fr<br>1 rue d'Otley, 77130,
+            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;color:#000000;text-align:Left;">Si vous avez des questions à nous poser, n’hésitez pas à communiquer avec nous en utilisant ce qui suit&nbsp;:<br>06 59 74 26 84<br>bulentbayrakli75@gmail.com<br>1 rue d'Otley, 77130,
                 Montereau-Fault-Yonne
             </p>
         <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;color:#000000;text-align:Left;"><br><span style="font-style:italic;font-weight:normal;">Date d’entrée en vigueur&nbsp;: </span>le 8 juillet 2022
