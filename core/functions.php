@@ -126,7 +126,8 @@ function createSendinblueContact($name, $email, $tel): bool
     $name = explode(" ", $name);
     $firstname = $name[0];
     $lastname = $name[1] ?? null;
-    $tel = "33".substr($tel, 1, strlen($tel));
+    $tel = (str_starts_with('+', $tel) || str_starts_with('33', $tel)) ?  $tel : "33".substr($tel, 1, strlen($tel));
+    $tel = str_replace("+", "", $tel);
 
     $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', getenv("SENDINBLUE_API_KEY"));
 
