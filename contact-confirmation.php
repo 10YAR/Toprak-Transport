@@ -20,7 +20,7 @@ if(!empty($_POST['contact_form'])) {
 
         if (!empty($name) && !empty($email) && !empty($message)) {
 
-            $headers = 'From: ' . $email . "\r\n";
+            $headers = 'From: contact@toprak-transport.fr\r\n';
             $headers .= 'Reply-To: ' . $email . "\r\n";
             $headers .= 'Content-Type: text/plain; charset=UTF-8' . "\r\n";
 
