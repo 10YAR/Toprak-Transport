@@ -11,11 +11,11 @@
                 <strong>IDENTITÉ</strong><br /><br />
                 Nom du site web : Toprak Transport<br />
                 Adresse : https://toprak-transport.fr<br />
-                Propriétaire : Bulent BAYRAKLI<br />
-                Responsable de publication : Bulent BAYRAKLI<br />
+                Propriétaire : TOPRAK TRANSPORT<br />
+                Responsable de publication : TOPRAK TRANSPORT<br />
                 <br /><br />
-                Conception et réalisation : Diyar BAYRAKLI<br />
-                Hébergement : Techcrea Solutions SARL<br />
+                Conception et réalisation : DiyarPC<br />
+                Hébergement : Contabo<br />
                 <br /><br />
                 <strong>CONDITIONS D’UTILISATION</strong><br /><br />
                 L’utilisation du présent site implique l’acceptation pleine et entière des conditions générales d’utilisation décrites ci-après. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment.<br />
