@@ -58,7 +58,7 @@
                             <li><span>Distance</span><br /><div class="startup_loc info-outer"><?= $calculated_price['distance'] ?></div></li>
                         </ul>
                         <div class="fare-box">
-                            <strong style="color:green;"><?= $calculated_price['price'] ?> € <span style="font-size: 16px;color:#777777;font-weight: 800;">TTC</span></strong>
+                            <strong style="display:none!important;color:green;"><?= $calculated_price['price'] ?> € <span style="font-size: 16px;color:#777777;font-weight: 800;">TTC</span></strong>
                             <span class="trip_est" style="font-weight: 800;line-height:20px;font-size:13px;">Paiement par CB ou en espèces<br /> à la fin du trajet</span>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                                 <li><span>Arrivée prévue</span><br /><div class="startup_loc info-outer" style="text-transform: none;"><?= str_replace(":", "h", date('H:i', $calculated_price['duration'])) ?> (durée: <?= str_replace([" hour", " mins"], ["h", "min"], $calculated_price['text_duration']) ?>)</div></li>
                                 <li><span>Distance</span><br /><div class="startup_loc info-outer"><?= $calculated_price['distance'] ?></div></li>
                             </ul>
-                            <div class="fare-box">
+                            <div class="fare-box" style="display:none!important;">
                                 <strong style="color:green;"><?= $calculated_price['price'] ?> € <span style="font-size: 16px;color:#777777;font-weight: 800;">TTC</span></strong>
                                 <span class="trip_est" style="font-weight: 800;line-height:20px;font-size:13px;">Paiement par CB ou en espèces<br /> à la fin du trajet</span>
                             </div>
