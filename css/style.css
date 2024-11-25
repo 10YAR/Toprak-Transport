@@ -5172,7 +5172,7 @@ ul.cats li a {
 }
 
 #mark_tarif {
-	display: none;
+	display: none !important;
 	color: green;
 	font-weight: 600;
 	font-size: 2rem;
